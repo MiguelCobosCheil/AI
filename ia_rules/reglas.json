@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1776327303.304748",
+    "nombre": "Brief",
+    "prompt_base": "CLiente va a pasar información de su producto para hacer una landing. tienes que analizar los documentos que te pasen y ver si tiene los siguientes puntos:\r\nIdentificación de Modelos, colores,Capacidades Técnicas, novedades, precio y assets.\r\nTienen que pasar como mínimo esos puntos, estos puntos tienen que estar detallados, no solo poner titulares y que no haya contenido. Puede que haya más información en el doocumento, esto es bueno, pero no es obligatorio.",
+    "documentos": [
+      "Apex Pro Max (El tope de gama)\nModelos: Modelo único con variaciones de memoria.\nColores: * Estándar: Titanio Natural, Titanio Negro.\nExclusivo Preventa: \"Supernova Blue\" (cambia de color con la luz).\nCapacidades Técnicas: * Procesador: Octa-core 4nm con IA dedicada para fotografía.\nCámara: Principal 200MP, Teleobjetivo periscópico 100x.\nCarga: 120W (Cargador incluido en caja, hay que destacarlo).\nNovedades: * Grabación de cine en formato Log.\nBotón lateral personalizable (Action Button).\nPrecio: 128GB (1.299€), 256GB (1.399€), 512GB (1.549€).\nAssets Adjuntos: * Camera_Samples: Fotos reales hechas con el móvil (Retrato, Nocturna, Macro) para la galería.\nExploded_View: Diagrama de las piezas internas para mostrar el nuevo sistema de refrigeración.\nB_Roll_Titanium: Clips cortos del mecanizado del metal para dar sensación de lujo.\nLegal_Draft: PDF con las 14 notas al pie obligatorias sobre la velocidad de carga y garantía.\n"
+    ],
+    "imagenes": []
+  }
+]

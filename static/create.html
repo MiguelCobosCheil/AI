@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear contenido</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        #loader {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #eee;
+            border-top: 4px solid #333;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #estado {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>✨ Crear contenido con IA</h2>
+
+<textarea id="prompt" placeholder="Escribe lo que quieres generar..."></textarea>
+
+<br>
+
+<button id="btnGenerar" onclick="generar()">Generar</button>
+<button id="btnWord" onclick="generarWord()">📄 Generar Word</button>
+<button onclick="generarPDF()">📕 Generar PDF</button>
+<button onclick="generarExcel()">📊 Generar Excel</button>
+<button onclick="generarPPT()">📊 Generar PPT</button>
+<br><br>
+<button onclick="generarVideo()">🎬 Generar vídeo</button>
+<label>Frames:</label>
+<input type="number" id="frames" value="14">
+
+<label>FPS:</label>
+<input type="number" id="fps" value="7">
+
+<label>Calidad:</label>
+<select id="quality">
+    <option value="low">⚡ Preview (rápido)</option>
+    <option value="sd" selected>SD</option>
+    <option value="hd">HD</option>
+    <option value="fullhd">Full HD</option>
+</select>
+<br><br>
+
+<button onclick="generarImagen('rapido')">⚡ Imagen Rápida</button>
+<button onclick="generarImagen('pro')">🔥 Imagen Normal</button>
+<button onclick="generarImagen('ultra')">🧠 Imagen ULTRA</button>
+<button onclick="generarImagen('juggernaut')">💪 Juggernaut</button>
+<br><br>
+<div style="margin-top:15px;">
+    <div><strong>🖼️ Imagen de referencia:</strong></div>
+    <input type="file" id="imagen_ref" accept="image/*">
+</div>
+
+<div style="margin-top:10px;">
+    <div><strong>📄 Documento de referencia:</strong></div>
+    <input type="file" id="doc_ref">
+</div>
+
+<br>
+
+<button onclick="generarImagenAvanzada('rapido')">⚡ Imagen Rápida + contexto</button>
+<button onclick="generarImagenAvanzada('pro')">🔥 Imagen Normal + contexto</button>
+<button onclick="generarImagenAvanzada('ultra')">🧠 Imagen ULTRA + contexto</button>
+<button onclick="generarImagenAvanzada('juggernaut')">💪 Juggernaut + contexto</button>
+<button onclick="limpiarContexto()">🗑️ Limpiar contexto</button>
+<div id="preview_contexto"></div>
+<br><br>
+<select id="tipo_grafico">
+    <option value="linea">📈 Línea</option>
+    <option value="barras">📊 Barras</option>
+    <option value="pie">🥧 Pie</option>
+</select>
+<button onclick="generarGrafico()">📊 Generar gráfico</button>
+<p id="estado"></p>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <span> Generando... puede tardar</span>
+</div>
+
+<div id="resultado"></div>
+
+<script>
+    async function generarGrafico(){
+
+        const prompt = document.getElementById("prompt").value
+        const imagen = document.getElementById("imagen_ref").files[0]
+        const documento = document.getElementById("doc_ref").files[0]
+        const tipo = document.getElementById("tipo_grafico").value
+
+        // 🔥 NUEVO
+        document.getElementById("estado").innerText = "⏳ Generando gráfico..."
+        document.getElementById("resultado").innerHTML = ""
+        toggleUI(true)
+
+        try {
+
+            const formData = new FormData()
+            formData.append("prompt", prompt)
+            formData.append("tipo_grafico", tipo)
+
+            if(imagen) formData.append("imagen", imagen)
+            if(documento) formData.append("documento", documento)
+
+            const res = await fetch("/generar_grafico", {
+                method: "POST",
+                body: formData
+            })
+
+            const data = await res.json()
+
+            if(data.ruta){
+
+                // 🔥 FIX CACHE + SVG
+                const url = "/" + data.ruta + "?t=" + Date.now()
+
+                document.getElementById("resultado").innerHTML =
+                    `<img src="/files${url}" style="max-width:600px;">`
+
+                document.getElementById("estado").innerText = "✅ Gráfico generado"
+
+            } else {
+                document.getElementById("estado").innerText = "❌ Error"
+                alert(data.error)
+            }
+
+        } catch (error){
+            console.error(error)
+            document.getElementById("estado").innerText = "❌ Error inesperado"
+        }
+
+        toggleUI(false)
+    }
+    document.getElementById("resultado").innerHTML = ""
+    document.getElementById("imagen_ref").addEventListener("change", function(e){
+        const file = e.target.files[0]
+
+        if(file){
+            document.getElementById("preview_contexto").innerHTML =
+                `🖼️ Imagen cargada: ${file.name}`
+        }
+    })
+
+document.getElementById("doc_ref").addEventListener("change", function(e){
+    const file = e.target.files[0]
+
+    if(file){
+        document.getElementById("preview_contexto").innerHTML +=
+            `<br>📄 Documento cargado: ${file.name}`
+    }
+})
+function limpiarContexto(){
+
+    // 🔥 reset inputs
+    document.getElementById("imagen_ref").value = ""
+    document.getElementById("doc_ref").value = ""
+
+    // 🔥 feedback visual
+    document.getElementById("estado").innerText = "🧹 Contexto eliminado"
+
+    console.log("Contexto limpiado")
+}
+// 🔥 CONTROL UI
+function toggleUI(cargando){
+    const loader = document.getElementById("loader")
+    const btn1 = document.getElementById("btnGenerar")
+    const btn2 = document.getElementById("btnWord")
+
+    document.getElementById("loader").style.display = cargando ? "block" : "none"
+
+    if(btn1) btn1.disabled = cargando
+    if(btn2) btn2.disabled = cargando
+}
+
+// --------------------
+// 📝 TEXTO
+// --------------------
+async function generar(){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText = "⏳ Generando texto..."
+    toggleUI(true)
+
+    try {
+
+        const res = await fetch("/generar", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt})
+        })
+
+        const data = await res.json()
+
+        document.getElementById("resultado").innerText = data.resultado || "Sin resultado"
+        document.getElementById("estado").innerText = "✅ Terminado"
+
+    } catch (error) {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+
+// --------------------
+// 📄 WORD
+// --------------------
+async function generarWord(){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText = "⏳ Generando documento Word..."
+    toggleUI(true)
+
+    try {
+
+        const res = await fetch("/generar_word", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt})
+        })
+
+        const data = await res.json()
+
+        document.getElementById("estado").innerText = "✅ Documento generado"
+
+        if(data.ruta){
+            window.location.href = "/" + data.ruta
+        }else{
+            alert("Error generando documento")
+        }
+
+    } catch (error) {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+
+// --------------------
+// 📕 PDF
+// --------------------
+async function generarPDF(){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText = "⏳ Generando PDF..."
+    toggleUI(true)
+
+    await new Promise(r => setTimeout(r, 50))
+
+    try {
+
+        const res = await fetch("/generar_pdf", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt})
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            window.location.href = "/" + data.ruta
+        }
+
+        document.getElementById("estado").innerText = "✅ PDF generado"
+
+    } catch {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+
+// --------------------
+// 📊 EXCEL
+// --------------------
+async function generarExcel(){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText = "⏳ Generando Excel..."
+    toggleUI(true)
+
+    await new Promise(r => setTimeout(r, 50))
+
+    try {
+
+        const res = await fetch("/generar_excel", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt})
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            window.location.href = "/" + data.ruta
+        }
+
+        document.getElementById("estado").innerText = "✅ Excel generado"
+
+    } catch {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+
+// --------------------
+// 📽️ PPT
+// --------------------
+async function generarPPT(){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText = "⏳ Generando PPT..."
+    toggleUI(true)
+
+    await new Promise(r => setTimeout(r, 50))
+
+    try {
+
+        const res = await fetch("/generar_ppt", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt})
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            window.location.href = "/" + data.ruta
+        }
+
+        document.getElementById("estado").innerText = "✅ PPT generado"
+
+    } catch {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+
+// --------------------
+// 🖼️ IMAGEN (🔥 ACTUALIZADO)
+// --------------------
+async function generarImagen(modo){
+
+    const prompt = document.getElementById("prompt").value
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    document.getElementById("estado").innerText =
+        modo === "rapido"
+        ? "⏳ Generando imagen rápida..."
+        : "⏳ Generando imagen de alta calidad..."
+
+    toggleUI(true)
+
+    await new Promise(r => setTimeout(r, 50))
+
+    try {
+
+        const res = await fetch("/generar_imagen", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({prompt, modo})
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            document.getElementById("resultado").innerHTML =
+                `<img src="/files${data.ruta}" style="max-width:400px;" />`
+        }
+
+        document.getElementById("estado").innerText = "✅ Imagen generada"
+
+    } catch {
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+async function generarImagenAvanzada(modo){
+    console.log("MODO AVANZADO FRONT:", modo)
+
+    const prompt = document.getElementById("prompt").value
+    const imagen = document.getElementById("imagen_ref").files[0]
+    const documento = document.getElementById("doc_ref").files[0]
+
+    console.log("IMAGEN:", imagen)
+    console.log("DOCUMENTO:", documento)
+
+    if(!prompt){
+        alert("Escribe algo")
+        return
+    }
+
+    // 🔥 MENSAJE DINÁMICO
+    let estadoTexto = ""
+
+    if(modo === "rapido"){
+        estadoTexto = "⏳ Generando imagen rápida con contexto..."
+    } else if(modo === "juggernaut"){
+        estadoTexto = "💪 Generando imagen Juggernaut (alta calidad)..."
+    } else if(modo === "ultra"){
+        estadoTexto = "🧠 Generando imagen ULTRA..."
+    } else {
+        estadoTexto = "🔥 Generando imagen PRO..."
+    }
+
+    document.getElementById("estado").innerText = estadoTexto
+
+    toggleUI(true)
+
+    await new Promise(r => setTimeout(r, 50))
+
+    try {
+
+        const formData = new FormData()
+        formData.append("prompt", prompt)
+        formData.append("modo", modo)
+
+        if(imagen){
+            formData.append("imagen", imagen)
+        }
+
+        if(documento){
+            formData.append("documento", documento)
+        }
+
+        const res = await fetch("/generar_imagen_avanzada", {
+            method: "POST",
+            body: formData
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            document.getElementById("resultado").innerHTML =
+                `<img src="/files${data.ruta}?t=${new Date().getTime()}" style="max-width:400px;" />`
+        } else {
+            alert("Error: " + data.error)
+        }
+
+        document.getElementById("estado").innerText = "✅ Imagen generada"
+
+    } catch (error){
+        console.error(error)
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+async function generarVideo(){
+
+    const prompt = document.getElementById("prompt").value
+    const imagen = document.getElementById("imagen_ref").files[0]
+
+    const frames = parseInt(document.getElementById("frames").value)
+    const fps = parseInt(document.getElementById("fps").value)
+    const quality = document.getElementById("quality").value
+
+    if(!prompt && !imagen){
+        alert("Escribe prompt o sube imagen")
+        return
+    }
+
+    document.getElementById("estado").innerText = "🎬 Generando vídeo..."
+    toggleUI(true)
+
+    try {
+
+        const formData = new FormData()
+
+        formData.append("prompt", prompt)
+        formData.append("frames", frames)
+        formData.append("fps", fps)
+
+        // 🔥 CAMBIO IMPORTANTE
+        formData.append("quality", quality)
+
+        if(imagen){
+            formData.append("imagen", imagen)
+        }
+
+        const resApi = await fetch("/generar_video", {
+            method: "POST",
+            body: formData
+        })
+
+        const data = await resApi.json()
+
+        if(data.ruta){
+
+            document.getElementById("resultado").innerHTML = `
+                <video controls style="max-width:600px;">
+                    <source src="/files/${data.ruta}?t=${Date.now()}" type="video/mp4">
+                </video>
+            `
+
+            document.getElementById("estado").innerText = "✅ Vídeo generado"
+
+        } else {
+            alert(data.error)
+        }
+
+    } catch (error){
+        console.error(error)
+        document.getElementById("estado").innerText = "❌ Error"
+    }
+
+    toggleUI(false)
+}
+</script>
+
+</body>
+</html>

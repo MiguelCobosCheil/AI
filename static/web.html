@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Agents</title>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+
+        .modo {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .activo {
+            display: block;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        textarea, input {
+            width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .bloque {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            background: #111;
+            color: #0f0;
+            padding: 10px;
+            max-height: 500px;
+            overflow: auto;
+            font-size: 12px;
+        }
+
+        #loader {
+            display: none;
+            font-weight: bold;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🌐 Web Agents</h2>
+
+<button onclick="volver()">⬅ Volver</button>
+
+<br><br>
+
+<!-- SELECTOR MODO -->
+<button onclick="cambiarModo('crawl')">🕸️ Crawl Web</button>
+<button onclick="cambiarModo('analyze')">🔍 Analizar URLs</button>
+<button onclick="cambiarModo('agent')">🤖 Automatizar</button>
+
+<div id="loader">⏳ Procesando...</div>
+
+<!-- ---------------- CRAWL ---------------- -->
+<div id="crawl" class="modo activo">
+
+<div class="bloque">
+<h3>🕸️ Explorar web completa</h3>
+
+<input id="crawl_url" placeholder="https://ejemplo.com"><br>
+<input id="crawl_max" placeholder="Máx páginas (ej: 50)" value="50"><br>
+
+<h4>Opciones:</h4>
+<label><input type="checkbox" id="crawl_resumen"> Resumen IA</label><br>
+<label><input type="checkbox" id="crawl_title" checked> Titular</label><br>
+<label><input type="checkbox" id="crawl_keywords"> Keywords</label><br>
+<label><input type="checkbox" id="crawl_meta"> Metadatos</label><br>
+<label><input type="checkbox" id="crawl_schema"> Schema</label><br>
+<label><input type="checkbox" id="crawl_pixels"> Pixels</label><br>
+<label><input type="checkbox" id="crawl_seo"> SEO Score</label><br>
+
+<br>
+
+<button onclick="ejecutarCrawl()">Ejecutar</button>
+<button onclick="exportar()">📥 Exportar Excel</button>
+
+</div>
+</div>
+
+<!-- ---------------- ANALYZE ---------------- -->
+<div id="analyze" class="modo">
+
+<div class="bloque">
+<h3>🔍 Analizar URLs</h3>
+
+<textarea id="analyze_urls" placeholder="Una URL por línea"></textarea>
+
+<h4>Opciones:</h4>
+<label><input type="checkbox" id="an_resumen"> Resumen IA</label><br>
+<label><input type="checkbox" id="an_title" checked> Titular</label><br>
+<label><input type="checkbox" id="an_keywords"> Keywords</label><br>
+<label><input type="checkbox" id="an_meta"> Metadatos</label><br>
+<label><input type="checkbox" id="an_schema"> Schema</label><br>
+<label><input type="checkbox" id="an_pixels"> Pixels</label><br>
+<label><input type="checkbox" id="an_img"> Imágenes</label><br>
+<label><input type="checkbox" id="an_video"> Videos</label><br>
+<label><input type="checkbox" id="an_seo"> SEO Score</label><br>
+
+<br>
+
+<button onclick="ejecutarAnalyze()">Ejecutar</button>
+<button onclick="exportar()">📥 Exportar Excel</button>
+
+</div>
+</div>
+
+<!-- ---------------- AGENT ---------------- -->
+<div id="agent" class="modo">
+
+<div class="bloque">
+<h3>🤖 Automatizar navegación</h3>
+<div>
+    <button onclick="guardarFlow()">💾 Guardar</button>
+    <button onclick="cargarFlow()">📂 Cargar</button>
+    <button onclick="eliminarFlow()">🗑️ Eliminar</button>
+    <select id="flows"></select>
+</div>
+<input id="agent_url" placeholder="URL inicial"><br>
+
+<select id="accion_tipo">
+    <option value="goto">Ir a URL</option>
+    <option value="click">Click</option>
+    <option value="wait">Esperar</option>
+    <option value="form">Rellenar formulario</option>
+    <option value="extract">Extraer contenido</option>
+    <option value="extract_ai">Extraer contenido con IA</option>
+    <option value="script">Ejecutar script</option>
+</select>
+
+<br>
+
+<input id="selector" placeholder="Selector (#id, .class)" onblur="autoSaveStep()"><br>
+<input id="valor" placeholder="Valor (ms, atributo, etc)" onblur="autoSaveStep()"><br>
+
+<!-- NUEVO -->
+
+<select id="extract_tipo" onchange="autoSaveStep()">
+    <option value="text">Texto</option>
+    <option value="html">HTML</option>
+    <option value="attr">Atributo</option>
+</select>
+
+<select id="form_tipo" onchange="autoSaveStep()">
+    <option value="input">Input/Textarea</option>
+    <option value="checkbox">Checkbox</option>
+    <option value="radio">Radio</option>
+    <option value="select">Select</option>
+</select>
+<textarea id="script_code" placeholder="console.log(document.title)" onchange="autoSaveStep()"></textarea>
+
+<br>
+
+<button onclick="addStep()">➕ Añadir paso</button>
+
+<ul id="steps"></ul>
+
+<button onclick="ejecutarAgent()">Ejecutar flujo</button>
+
+</div>
+</div>
+
+<!-- RESULTADO -->
+<pre id="resultado"></pre>
+<script>
+    let editIndex = null
+let ultimoResultado = null
+
+function volver(){
+    window.location.href = "/"
+}
+
+function cambiarModo(modo){
+    document.querySelectorAll(".modo").forEach(m => m.classList.remove("activo"))
+    document.getElementById(modo).classList.add("activo")
+}
+
+function showLoader(show){
+    document.getElementById("loader").style.display = show ? "block" : "none"
+}
+
+// 🔐 evitar HTML roto
+function escapeHTML(str){
+    if(!str) return ""
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+}
+
+// toggle simple
+function toggle(id){
+    const el = document.getElementById(id)
+    if(!el) return
+    el.style.display = el.style.display === "none" ? "block" : "none"
+}
+
+//////////////////////
+// CRAWL
+//////////////////////
+
+async function ejecutarCrawl(){
+
+    showLoader(true)
+
+    const payload = {
+        url: document.getElementById("crawl_url").value,
+        max_pages: parseInt(document.getElementById("crawl_max").value) || 50,
+        opciones: {
+            resumen: document.getElementById("crawl_resumen").checked,
+            title: document.getElementById("crawl_title").checked,
+            keywords: document.getElementById("crawl_keywords").checked,
+            meta: document.getElementById("crawl_meta").checked,
+            schema: document.getElementById("crawl_schema").checked,
+            pixels: false,
+            seo: document.getElementById("crawl_seo").checked
+        }
+    }
+
+    try {
+
+        const res = await fetch("/web/crawl", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        })
+
+        const data = await res.json()
+
+        ultimoResultado = data.results || []
+
+        pintarResultados(ultimoResultado)
+
+    } catch (e) {
+        console.error(e)
+        alert("Error en crawl")
+    }
+
+    showLoader(false)
+}
+
+//////////////////////
+// ANALYZE
+//////////////////////
+async function ejecutarAnalyze(){
+
+    showLoader(true)
+
+    const urls = document.getElementById("analyze_urls").value
+        .split("\n")
+        .map(u => u.trim())
+        .filter(u => u)
+
+    const payload = {
+        urls,
+        opciones: {
+            resumen: document.getElementById("an_resumen").checked,
+            title: document.getElementById("an_title").checked,
+            keywords: document.getElementById("an_keywords").checked,
+            meta: document.getElementById("an_meta").checked,
+            schema: document.getElementById("an_schema").checked,
+            pixels: false,
+            imagenes: document.getElementById("an_img").checked,
+            videos: document.getElementById("an_video").checked,
+            seo: document.getElementById("an_seo").checked
+        }
+    }
+
+    try {
+
+        const res = await fetch("/web/analyze", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        })
+
+        const data = await res.json()
+
+        // 🔥 FIX CLAVE (sin romper tu estructura)
+        ultimoResultado = (data || []).map(r => ({
+            url: r.url,
+            data: r.data || {}
+        }))
+
+        pintarResultados(ultimoResultado)
+
+    } catch (e) {
+        console.error(e)
+        alert("Error en análisis")
+    }
+
+    showLoader(false)
+}
+//////////////////////
+// EXPORTAR
+//////////////////////
+
+async function exportar(){
+
+    if(!ultimoResultado || ultimoResultado.length === 0){
+        alert("No hay datos")
+        return
+    }
+
+    try {
+
+        const res = await fetch("/web/export", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ resultados: ultimoResultado })
+        })
+
+        const data = await res.json()
+
+        if(data.ruta){
+            window.open(`/files/${data.ruta}`)
+        }
+
+    } catch (e) {
+        console.error(e)
+        alert("Error exportando")
+    }
+}
+
+//////////////////////
+// AGENT
+//////////////////////
+
+let steps = []
+function addStep(){
+
+    const stepType = document.getElementById("accion_tipo").value
+    const selector = document.getElementById("selector").value
+    const valor = document.getElementById("valor").value
+    const extractTipo = document.getElementById("extract_tipo").value
+    const formTipo = document.getElementById("form_tipo").value
+    const script = document.getElementById("script_code").value
+
+    let step = { type: stepType }
+
+    if(stepType === "goto"){
+        step.url = document.getElementById("agent_url").value
+    }
+
+    if(stepType === "click"){
+        step.selector = selector
+    }
+
+    if(stepType === "wait"){
+        step.time = parseInt(valor) || 1000
+    }
+    if(stepType === "extract_ai"){
+        step.prompt = document.getElementById("script_code").value
+    }
+    if(stepType === "extract"){
+
+        let valueFinal = valor
+
+        // 🔥 si hay contenido en textarea → usarlo
+        if(script && script.trim() !== ""){
+            valueFinal = script
+        }
+
+        step.extract = {
+            selector: selector,
+            type: extractTipo,
+            attr: valueFinal || null
+        }
+    }
+
+    if(stepType === "script"){
+        step.script = script
+    }
+
+    if(stepType === "form"){
+
+        let valueFinal = valor
+
+        if(script && script.trim() !== ""){
+            valueFinal = script
+        }
+
+        step.form = {
+            selector: selector,
+            value: valueFinal,
+            inputType: formTipo   // 🔥 FIX AQUÍ
+        }
+    }
+
+    if(editIndex !== null){
+        steps[editIndex] = step
+        editIndex = null
+    } else {
+        steps.push(step)
+    }
+
+    renderSteps()
+
+    console.log("FORM DEBUG", {
+        selector,
+        valor,
+        script,
+        extractTipo,
+        formTipo
+    })
+
+    resetForm()
+}
+
+function removeStep(index){
+    steps.splice(index, 1)
+    renderSteps()
+}
+
+function renderSteps(){
+
+    let html = ""
+
+    steps.forEach((s, i) => {
+
+        let texto = `${i+1}. ${s.type.toUpperCase()}`
+
+        if(s.selector){
+            texto += ` → ${s.selector}`
+        }
+
+        if(s.url){
+            texto += ` → ${s.url}`
+        }
+
+        if(s.time){
+            texto += ` (${s.time}ms)`
+        }
+        if(s.type === "extract_ai"){
+            texto += " | IA"
+        }
+        if(s.extract){
+            texto += ` | EXTRAER: ${s.extract.type} de ${s.extract.selector}`
+        }
+
+        if(s.script){
+            texto += ` | SCRIPT`
+        }
+
+        html += `
+            <li>
+                ${texto}
+
+                <button onclick="moveStepUp(${i})">⬆</button>
+                <button onclick="moveStepDown(${i})">⬇</button>
+                <button onclick="editStep(${i})">✏️</button>
+                <button onclick="removeStep(${i})">❌</button>
+            </li>
+        `
+    })
+
+    document.getElementById("steps").innerHTML = html
+}
+
+
+
+async function ejecutarAgent(){
+
+    showLoader(true)
+
+    try {
+        const url = document.getElementById("agent_url").value
+
+        if(!url){
+            alert("Introduce una URL inicial")
+            showLoader(false)
+            return
+        }
+
+        const res = await fetch("/web/agent", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ url, steps })
+        })
+
+        // 🔥 CLAVE: ver respuesta aunque falle
+        const text = await res.text()
+
+        console.log("RAW RESPONSE:", text)
+
+        let data
+
+        try {
+            data = JSON.parse(text)
+        } catch {
+            alert("❌ Backend NO devuelve JSON:\n" + text)
+            showLoader(false)
+            return
+        }
+
+        if(!res.ok){
+            alert("❌ Error backend:\n" + JSON.stringify(data, null, 2))
+            showLoader(false)
+            return
+        }
+
+        document.getElementById("resultado").innerText =
+            JSON.stringify(data, null, 2)
+
+    } catch (e) {
+        console.error("ERROR FRONT:", e)
+        alert("❌ Error JS:\n" + e.message)
+    }
+
+    showLoader(false)
+}
+
+//////////////////////
+// PIXELS (🔥 FIXED)
+//////////////////////
+async function cargarPixels(url, divId){
+
+    const div = document.getElementById(divId)
+
+    if(div.style.display === "block"){
+        div.style.display = "none"
+        return
+    }
+
+    div.style.display = "block"
+    div.innerText = "⏳ Analizando pixels (30-40s)..."
+
+    try {
+
+        const res = await fetch("/web/pixels", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ url })
+        })
+
+        let data
+
+        try {
+            data = await res.json()
+        } catch {
+            div.innerText = "Error backend (no JSON)"
+            return
+        }
+
+        let texto = ""
+
+        const proveedores = Object.keys(data.pixels || {})
+
+        proveedores.forEach(p => {
+
+            const lista = data.pixels[p] || []
+
+            texto += `\n🔹 ${p.toUpperCase()} (${lista.length})\n`
+
+            lista.forEach(px => {
+
+                if(typeof px === "string"){
+                    texto += `   - ${px.substring(0, 100)}...\n`
+                } else {
+
+                    const u = px.url || ""
+                    const method = px.method || ""
+                    const status = px.status || ""
+                    const type = px.type || ""
+
+                    texto += `   - ${u.substring(0, 120)}...\n`
+                    texto += `     [${method} | ${status} | ${type}]\n`
+                }
+
+            })
+        })
+
+        if(!texto){
+            texto = "No se detectaron pixels"
+        }
+
+        div.innerText = texto
+
+        // 🔥🔥🔥 CLAVE: GUARDAR EN RESULTADOS
+        actualizarPixelsEnMemoria(url, data.pixels)
+
+    } catch (e) {
+        console.error(e)
+        div.innerText = "Error analizando pixels"
+    }
+}
+function actualizarPixelsEnMemoria(url, pixels){
+
+    if(!ultimoResultado) return
+
+    ultimoResultado.forEach(item => {
+
+        if(item.url === url){
+
+            if(!item.data) item.data = {}
+
+            item.data.pixels = pixels
+        }
+    })
+
+    console.log("✅ Pixels guardados en memoria")
+}
+//////////////////////
+// VISUAL
+//////////////////////
+
+function pintarResultados(data){
+
+    let texto = ""
+
+    data.forEach((r, i) => {
+
+        const id = "item_" + i
+
+        texto += `\n🌐 ${r.url}\n`
+
+        if(r.data){
+
+            if(r.data.title)
+                texto += `📰 ${escapeHTML(r.data.title)}\n`
+
+            if(r.data.resumen){
+                const corto = r.data.resumen.substring(0, 80)
+                texto += `🧠 <span onclick="toggle('${id}_resumen')" style="cursor:pointer;">Resumen: ${escapeHTML(corto)}... ▼</span>\n`
+                texto += `<div id="${id}_resumen" style="display:none;">${escapeHTML(r.data.resumen)}</div>\n`
+            }
+
+            if(r.data.keywords){
+                texto += `🏷️ <span onclick="toggle('${id}_kw')" style="cursor:pointer;">Keywords ▼</span>\n`
+                texto += `<div id="${id}_kw" style="display:none;">${escapeHTML(r.data.keywords)}</div>\n`
+            }
+
+            if(r.data.meta){
+                texto += `📦 <span onclick="toggle('${id}_meta')" style="cursor:pointer;">Meta (${r.data.meta.length}) ▼</span>\n`
+
+                let metas = r.data.meta.map(m => {
+                    let content = (m.content || "").substring(0, 80)
+                    if(content.length >= 80) content += "..."
+                    return `${m.name || ""}: ${content}`
+                }).join("\n")
+
+                texto += `<div id="${id}_meta" style="display:none;">${escapeHTML(metas)}</div>\n`
+            }
+
+            if(r.data.schema){
+                texto += `🧩 <span onclick="toggle('${id}_schema')" style="cursor:pointer;">Schema (${r.data.schema.length}) ▼</span>\n`
+
+                let schemas = r.data.schema.map(s => {
+                    if(!s) return ""
+                    return s.substring(0, 120) + "..."
+                }).join("\n\n")
+
+                texto += `<div id="${id}_schema" style="display:none;">${escapeHTML(schemas)}</div>\n`
+            }
+
+            // 🔥 PIXELS ON DEMAND
+            texto += `🎯 <span onclick="cargarPixels('${r.url}', '${id}_pixels')" style="cursor:pointer;">Pixels (analizar) ▼</span>\n`
+            texto += `<div id="${id}_pixels" style="display:none;"></div>\n`
+
+            if(r.data.score !== undefined){
+
+                texto += `📊 <span onclick="toggle('${id}_seo')" style="cursor:pointer;">Score: ${r.data.score} ▼</span>\n`
+
+                let seo = ""
+
+                if(r.data.errores_seo){
+                    seo = r.data.errores_seo.join("\n")
+                }
+
+                texto += `<div id="${id}_seo" style="display:none;">${escapeHTML(seo)}</div>\n`
+            }
+        }
+
+        texto += "-------------------------\n"
+    })
+
+    document.getElementById("resultado").innerHTML = texto
+}
+function moveStepUp(index){
+    if(index === 0) return
+
+    const temp = steps[index]
+    steps[index] = steps[index - 1]
+    steps[index - 1] = temp
+
+    renderSteps()
+}
+function moveStepDown(index){
+    if(index === steps.length - 1) return
+
+    const temp = steps[index]
+    steps[index] = steps[index + 1]
+    steps[index + 1] = temp
+
+    renderSteps()
+}
+function editStep(index){
+
+    resetForm()
+
+    const step = steps[index]
+    editIndex = index
+
+    document.getElementById("accion_tipo").value = step.type
+
+    if(step.type === "goto"){
+        document.getElementById("agent_url").value = step.url || ""
+    }
+
+    if(step.type === "click"){
+        document.getElementById("selector").value = step.selector || ""
+    }
+
+    if(step.type === "wait"){
+        document.getElementById("valor").value = step.time || ""
+    }
+
+    if(step.type === "extract"){
+
+        document.getElementById("selector").value = step.extract?.selector || ""
+        document.getElementById("extract_tipo").value = step.extract?.type || "text"
+
+        const val = step.extract?.attr || ""
+
+        // 🔥 si es largo → textarea
+        if(val.length > 30){
+            document.getElementById("script_code").value = val
+            document.getElementById("valor").value = ""
+        } else {
+            document.getElementById("valor").value = val
+            document.getElementById("script_code").value = ""
+        }
+    }
+    if(step.type === "extract_ai"){
+        document.getElementById("script_code").value = step.prompt || ""
+    }
+    if(step.type === "script"){
+        document.getElementById("script_code").value = step.script || ""
+    }
+
+    if(step.type === "form"){
+        document.getElementById("selector").value = step.form?.selector || ""
+        document.getElementById("valor").value = step.form?.value || ""
+        document.getElementById("form_tipo").value = step.form?.inputType || "input"  // 🔥 FIX AQUÍ
+    }
+}
+async function guardarFlow(){
+
+    const nombre = prompt("Nombre del flujo:")
+    if(!nombre) return
+
+    const flow = {
+        url: document.getElementById("agent_url").value,
+        steps: steps
+    }
+
+    await fetch("/flows/save", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: nombre,
+            flow: flow
+        })
+    })
+
+    cargarListaFlows()
+
+    alert("Guardado en servidor")
+}
+async function cargarFlow(){
+
+    const nombre = document.getElementById("flows").value
+    if(!nombre) return
+
+    const res = await fetch("/flows/list")
+    const flows = await res.json()
+
+    const flow = flows[nombre]
+
+    if(!flow) return
+
+    steps = flow.steps || []
+    document.getElementById("agent_url").value = flow.url || ""
+
+    renderSteps()
+}
+async function eliminarFlow(){
+
+    const nombre = document.getElementById("flows").value
+    if(!nombre) return
+
+    await fetch("/flows/delete", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ name: nombre })
+    })
+
+    cargarListaFlows()
+}
+async function cargarListaFlows(){
+
+    const select = document.getElementById("flows")
+
+    select.innerHTML = `<option value="">-- Seleccionar flujo --</option>`
+
+    const res = await fetch("/flows/list")
+    const flows = await res.json()
+
+    Object.keys(flows).forEach(nombre => {
+
+        const option = document.createElement("option")
+        option.value = nombre
+        option.textContent = nombre
+
+        select.appendChild(option)
+    })
+}
+function resetForm(){
+
+    document.getElementById("accion_tipo").value = "goto"
+
+    document.getElementById("selector").value = ""
+    document.getElementById("valor").value = ""
+    document.getElementById("script_code").value = ""
+
+    document.getElementById("extract_tipo").value = "text"
+    document.getElementById("form_tipo").value = "input"  // 🔥 AÑADIDO
+}
+function autoSaveStep(){
+
+    if(editIndex === null) return
+
+    const stepType = document.getElementById("accion_tipo").value
+    const selector = document.getElementById("selector").value
+    const valor = document.getElementById("valor").value
+    const extractTipo = document.getElementById("extract_tipo").value
+    const formTipo = document.getElementById("form_tipo").value
+    const script = document.getElementById("script_code").value
+
+    let step = { type: stepType }
+
+    if(stepType === "goto"){
+        step.url = document.getElementById("agent_url").value
+    }
+
+    if(stepType === "click"){
+        step.selector = selector
+    }
+
+    if(stepType === "wait"){
+        step.time = parseInt(valor) || 1000
+    }
+    if(stepType === "extract_ai"){
+        step.prompt = script
+    }
+    if(stepType === "extract"){
+
+        let valueFinal = valor
+
+        if(script && script.trim() !== ""){
+            valueFinal = script
+        }
+
+        step.extract = {
+            selector: selector,
+            type: extractTipo,
+            attr: valueFinal || null
+        }
+    }
+
+    if(stepType === "script"){
+        step.script = script
+    }
+
+    if(stepType === "form"){
+
+        let valueFinal = ""
+
+        if(script && script.trim() !== ""){
+            valueFinal = script
+        } else if(valor){
+            valueFinal = valor
+        }
+
+        step.form = {
+            selector: selector,
+            value: valueFinal,
+            inputType: formTipo   // 🔥 FIX AQUÍ
+        }
+    }
+
+    steps[editIndex] = step
+
+    console.log("💾 Auto-guardado step:", step)
+
+    renderSteps()
+}
+cargarListaFlows()
+</script>
+</body>
+</html>

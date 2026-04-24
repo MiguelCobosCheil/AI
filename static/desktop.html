@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Desktop Agent</title>
+
+    <style>
+        body { font-family: Arial; padding: 40px; }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+        }
+
+        .step {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+
+        img {
+            max-width: 200px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #estado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .grabando {
+            color: red;
+        }
+
+        .pausado {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🖥️ Desktop Agent</h1>
+
+<!-- 🎥 CONTROLES GRABACIÓN -->
+<button onclick="start()">🎥 Iniciar</button>
+<button onclick="pause()">⏸️ Pausar</button>
+<button onclick="stop()">⏹️ Terminar</button>
+
+<hr>
+
+<!-- 💾 GESTIÓN -->
+<button onclick="guardarFlow()">💾 Guardar</button>
+<button onclick="cargarFlow()">📂 Cargar</button>
+<button onclick="eliminarFlow()">🗑️ Eliminar</button>
+<button onclick="run()">▶️ Ejecutar</button>
+
+<select id="flows"></select>
+
+<div id="estado"></div>
+
+<hr>
+
+<div id="steps"></div>
+
+<script>
+
+let steps = []
+let recording = false
+
+// -----------------------------
+// 🧠 ESTADO
+// -----------------------------
+function setEstado(texto, clase="") {
+    const el = document.getElementById("estado")
+    el.textContent = texto
+    el.className = clase
+}
+
+// -----------------------------
+// 🎥 START
+// -----------------------------
+async function start(){
+
+    await fetch("/desktop/record/start", { method: "POST" })
+
+    recording = true
+    setEstado("🔴 Grabando...", "grabando")
+
+    startPolling()  // 👈 CLAVE
+}
+
+// -----------------------------
+// ⏸️ PAUSE
+// -----------------------------
+async function pause(){
+
+    await fetch("/desktop/record/pause", { method: "POST" })
+
+    recording = false
+    setEstado("⏸️ Pausado", "pausado")
+
+    stopPolling()
+}
+
+// -----------------------------
+// ⏹️ STOP
+// -----------------------------
+async function stop(){
+
+    const res = await fetch("/desktop/record/stop", {
+        method: "POST"
+    })
+
+    const data = await res.json()
+
+    steps = data.flow || []
+
+    render()
+
+    recording = false
+    stopPolling()
+
+    setEstado("✅ Grabación finalizada")
+}
+
+// -----------------------------
+// 🧱 RENDER
+// -----------------------------
+function render(){
+
+    let html = ""
+
+    steps.forEach((s, i) => {
+
+        if(!s.data){
+            s.data = {}
+        }
+
+        const data = s.data
+
+        html += `
+        <div class="step">
+
+            <strong>${s.type || "step"}</strong><br>
+
+            ${data.image ? `<img src="/${data.image}" />` : ""}
+
+            <textarea onchange="updatePrompt(${i}, this.value)">
+${data.prompt || ""}
+            </textarea>
+
+            <br>
+
+            <button onclick="moveUp(${i})">⬆</button>
+            <button onclick="moveDown(${i})">⬇</button>
+            <button onclick="remove(${i})">❌</button>
+
+        </div>
+        `
+    })
+
+    document.getElementById("steps").innerHTML = html
+}
+// -----------------------------
+// ✏️ EDITAR PROMPT
+// -----------------------------
+function updatePrompt(i, value){
+
+    if(!steps[i].data){
+        steps[i].data = {}
+    }
+
+    steps[i].data.prompt = value
+}
+
+// -----------------------------
+// 🔀 ORDEN
+// -----------------------------
+function moveUp(i){
+    if(i === 0) return
+    [steps[i], steps[i-1]] = [steps[i-1], steps[i]]
+    render()
+}
+
+function moveDown(i){
+    if(i === steps.length - 1) return
+    [steps[i], steps[i+1]] = [steps[i+1], steps[i]]
+    render()
+}
+
+// -----------------------------
+// ❌ BORRAR
+// -----------------------------
+function remove(i){
+    steps.splice(i, 1)
+    render()
+}
+
+// -----------------------------
+// 💾 GUARDAR
+// -----------------------------
+async function guardarFlow(){
+
+    const nombre = prompt("Nombre del flow:")
+    if(!nombre) return
+
+    await fetch("/desktop/save_flow", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ nombre, steps })
+    })
+
+    cargarLista()
+}
+
+// -----------------------------
+// 📂 CARGAR
+// -----------------------------
+async function cargarFlow(){
+
+    const nombre = document.getElementById("flows").value
+
+    const res = await fetch(`/desktop/get_flow/${nombre}`)
+    const data = await res.json()
+
+    steps = data.steps || []
+    render()
+}
+
+// -----------------------------
+// 🗑️ ELIMINAR
+// -----------------------------
+async function eliminarFlow(){
+
+    const nombre = document.getElementById("flows").value
+
+    await fetch(`/desktop/delete_flow/${nombre}`, {
+        method: "DELETE"
+    })
+
+    cargarLista()
+}
+
+// -----------------------------
+// 📋 LISTA
+// -----------------------------
+async function cargarLista(){
+
+    const res = await fetch("/desktop/flows")
+    const data = await res.json()
+
+    const select = document.getElementById("flows")
+    select.innerHTML = ""
+
+    Object.keys(data).forEach(f => {
+        const opt = document.createElement("option")
+        opt.value = f
+        opt.textContent = f
+        select.appendChild(opt)
+    })
+}
+
+cargarLista()
+
+// -----------------------------
+// ▶️ EJECUTAR
+// -----------------------------
+async function run(){
+
+    if(steps.length === 0){
+        alert("No hay pasos")
+        return
+    }
+
+    try {
+
+        setEstado("🔵 Ejecutando...")
+
+        const res = await fetch("/desktop/run", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ flow: steps })
+        })
+
+        await res.json()
+
+        setEstado("✅ Ejecutado")
+
+    } catch(e){
+
+        console.error(e)
+        setEstado("❌ Error ejecutando")
+        alert("Error en ejecución")
+    }
+}
+let interval = null
+
+function startPolling(){
+
+    interval = setInterval(async () => {
+
+        if(!recording) return
+
+        try {
+
+            const res = await fetch("/desktop/record/steps")
+            const data = await res.json()
+
+            console.log("STEPS BACK:", data.steps)
+
+            // 🔥 SOLO ACTUALIZA SI HAY DATOS
+            if(data.steps && data.steps.length > 0){
+
+                steps = data.steps
+
+                console.log("STEPS FRONT:", steps)
+
+                render()
+            }
+
+        } catch(e){
+
+            console.error("❌ Error polling:", e)
+
+        }
+
+    }, 500)
+}
+
+function stopPolling(){
+    if(interval){
+        clearInterval(interval)
+        interval = null
+    }
+}
+</script>
+
+</body>
+</html>

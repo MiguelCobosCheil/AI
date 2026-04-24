@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard IA</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .top {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .ok { background: #28a745; }
+        .error { background: #dc3545; }
+
+        .item {
+            background: #f5f5f5;
+            padding: 10px;
+            margin-top: 10px;
+            border-left: 5px solid #ccc;
+        }
+
+        .ok-item { border-color: #28a745; }
+        .error-item { border-color: #dc3545; }
+    </style>
+</head>
+
+<body>
+
+<h2>📊 Dashboard IA</h2>
+<select id="filtroRegla">
+    <option value="">Todas las reglas</option>
+</select>
+<div class="top">
+    <button onclick="cargar()">🔄 Actualizar</button>
+</div>
+
+<div id="stats"></div>
+<canvas id="grafico" width="600" height="300"></canvas>
+<div id="lista"></div>
+
+<script>
+    async function cargarReglasFiltro() {
+    const res = await fetch("/reglas");
+    const reglas = await res.json();
+
+    const select = document.getElementById("filtroRegla");
+
+    reglas.forEach(r => {
+        const option = document.createElement("option");
+        option.value = r.id;
+        option.textContent = r.nombre;
+        select.appendChild(option);
+    });
+}
+
+cargarReglasFiltro();
+let chart = null;
+
+async function cargar(){
+
+    const res = await fetch("/historial")
+    const data = await res.json()
+    const reglaSeleccionada = document.getElementById("filtroRegla").value;
+
+    let dataFiltrada = data;
+
+    if(reglaSeleccionada){
+        dataFiltrada = data.filter(item => item.regla_id === reglaSeleccionada);
+    }
+    let ok = 0
+    let error = 0
+
+    const porDia = {}
+
+    dataFiltrada.forEach(item => {
+
+        const fecha = item.fecha ? item.fecha.split("T")[0] : "sin_fecha"
+
+        if(!porDia[fecha]){
+            porDia[fecha] = { ok: 0, error: 0 }
+        }
+
+        if(item.accion === "ok"){
+            ok++
+            porDia[fecha].ok++
+        }
+
+        if(item.accion === "revisar"){
+            error++
+            porDia[fecha].error++
+        }
+    })
+
+    // 🔢 stats
+    document.getElementById("stats").innerHTML = `
+        <div class="card ok">✅ OK: ${ok}</div>
+        <div class="card error">❌ Error: ${error}</div>
+    `
+
+    // 📊 preparar datos gráfico
+    const fechas = Object.keys(porDia).sort()
+
+    const dataOk = fechas.map(f => porDia[f].ok)
+    const dataError = fechas.map(f => porDia[f].error)
+
+    const ctx = document.getElementById("grafico").getContext("2d")
+
+    // 🔥 destruir gráfico anterior
+    if(chart){
+        chart.destroy()
+    }
+
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas,
+            datasets: [
+                {
+                    label: 'OK',
+                    data: dataOk,
+                    borderWidth: 2
+                },
+                {
+                    label: 'ERROR',
+                    data: dataError,
+                    borderWidth: 2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true
+                }
+            }
+        }
+    })
+
+    // 📋 lista
+    let html = ""
+
+    dataFiltrada.slice(-20).reverse().forEach(item => {
+
+        const esOk = item.accion === "ok"
+
+        html += `
+        <div class="item ${esOk ? 'ok-item' : 'error-item'}">
+            <strong>${item.asunto || "Archivo"}</strong><br>
+            ${item.respuesta || ""}
+        </div>
+        `
+    })
+
+    document.getElementById("lista").innerHTML = html
+}
+
+cargar()
+document.getElementById("filtroRegla").addEventListener("change", cargar);
+</script>
+
+</body>
+</html>

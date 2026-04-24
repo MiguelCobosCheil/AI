@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1776327303.304748",
+    "nombre": "Brief",
+    "prompt_base": "CLiente va a pasar informaci\u00f3n de su producto para hacer una landing. tienes que analizar los documentos que te pasen y ver si tiene los siguientes puntos:\r\nIdentificaci\u00f3n de Modelos, colores,Capacidades T\u00e9cnicas, novedades, precio y assets.\r\nTienen que pasar como m\u00ednimo esos puntos, estos puntos tienen que estar detallados, no solo poner titulares y que no haya contenido. Puede que haya m\u00e1s informaci\u00f3n en el doocumento, esto es bueno, pero no es obligatorio.",
+    "documentos": [
+      "Apex Pro Max (El tope de gama)\nModelos: Modelo \u00fanico con variaciones de memoria.\nColores: * Est\u00e1ndar: Titanio Natural, Titanio Negro.\nExclusivo Preventa: \"Supernova Blue\" (cambia de color con la luz).\nCapacidades T\u00e9cnicas: * Procesador: Octa-core 4nm con IA dedicada para fotograf\u00eda.\nC\u00e1mara: Principal 200MP, Teleobjetivo perisc\u00f3pico 100x.\nCarga: 120W (Cargador incluido en caja, hay que destacarlo).\nNovedades: * Grabaci\u00f3n de cine en formato Log.\nBot\u00f3n lateral personalizable (Action Button).\nPrecio: 128GB (1.299\u20ac), 256GB (1.399\u20ac), 512GB (1.549\u20ac).\nAssets Adjuntos: * Camera_Samples: Fotos reales hechas con el m\u00f3vil (Retrato, Nocturna, Macro) para la galer\u00eda.\nExploded_View: Diagrama de las piezas internas para mostrar el nuevo sistema de refrigeraci\u00f3n.\nB_Roll_Titanium: Clips cortos del mecanizado del metal para dar sensaci\u00f3n de lujo.\nLegal_Draft: PDF con las 14 notas al pie obligatorias sobre la velocidad de carga y garant\u00eda.\n"
+    ],
+    "imagenes": [],
+    "feedback": [
+      {
+        "input": "Smartphone brief de prueba\nModelos: * SUPER CAMARA (Est\u00e1ndar)\nSuper camara C Pro (Con soporte para l\u00e1piz \u00f3ptico y m\u00e1s RAM)\nColores: * Lanzamiento: Phantom Black, Icy Blue.\nExclusivos Web (Solo tienda oficial): Solar Red (con acabado en cuero vegano) y Deep Emerald.\nCapacidades T\u00e9cnicas: * Almacenamiento: 256GB, 512GB, 1TB.\nRAM: 12GB / 16GB (Pro).\nPantalla: Din\u00e1mica LTPO 1-120Hz.\nNovedades (Lo que hay que destacar): * Nueva c\u00e1mara con visi\u00f3n nocturna de alta calidad\nResistencia al agua IPX8 (primer plegable que puede sumergirse).\nPrecio: Desde 1.199\u20ac (normal) hasta 2.199\u20ac (Pro 1TB).\nAssets Adjuntos: * Carpeta 3D_Renders: 15 archivos .png transparentes con todos los \u00e1ngulos de plegado.\nCarpeta Video_Hero: Master en 4K del despliegue del terminal.\nDocumento Copy_Specs: Tabla comparativa con la generaci\u00f3n anterior.\nCarpeta Lifestyle: 10 fotos de ejecutivos usando el modo multitarea en caf\u00e9s y aviones.\n",
+        "output": "{\"ok\":true,\"motivo\":\"El contenido cumple con los puntos m\u00ednimos de identificaci\u00f3n de Modelos, colores, capacidades t\u00e9cnicas, novedades y precio. Adem\u00e1s, incluye assets adjuntos como renders en 3D, un video hero, un documento de especificaciones y una carpeta de lifestyle, lo que es m\u00e1s all\u00e1 del m\u00ednimo requerido.\"}",
+        "correcto": true,
+        "comentario": "has acertado, ese documento es incorrecto"
+      }
+    ]
+  }
+]

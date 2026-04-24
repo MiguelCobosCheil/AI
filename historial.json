@@ -1,0 +1,1350 @@
+[
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "accion": "responder",
+    "respuesta": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the m",
+    "fecha": "2026-04-07T15:26:55.779940"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081QAAAA==",
+    "asunto": "adjunto",
+    "preview": "adjunto el pdf de ejemplo a ver como lo lee\r\n\r\n--\r\n\r\n\r\nMiguel Cobos",
+    "accion": "responder",
+    "respuesta": "",
+    "fecha": "2026-04-07T15:26:56.735236"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "accion": "responder",
+    "respuesta": "El pago de la factura se realizar\u00e1 en los pr\u00f3ximos d\u00edas. Por favor, revise el contenido de la factura para confirmar o rechazar el cobro.",
+    "fecha": "2026-04-07T15:27:00.345188"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "accion": "archivar",
+    "respuesta": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the m",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "content_type": "text/csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png",
+        "content_type": "image/png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg",
+        "content_type": "image/jpeg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png",
+        "content_type": "image/png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png",
+        "content_type": "image/png"
+      }
+    ],
+    "fecha": "2026-04-07T15:51:35.212800"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081QAAAA==",
+    "asunto": "adjunto",
+    "preview": "adjunto el pdf de ejemplo a ver como lo lee\r\n\r\n--\r\n\r\n\r\nMiguel Cobos",
+    "accion": "responder",
+    "respuesta": "Ejemplo de PDF Ejemplo de PDF",
+    "attachments": [
+      {
+        "nombre": "Ejemplo-de-descarga-pdf.pdf",
+        "ruta": "temp/Ejemplo-de-descarga-pdf.pdf",
+        "content_type": "application/pdf"
+      }
+    ],
+    "fecha": "2026-04-07T15:51:38.598625"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "content_type": "application/pdf"
+      }
+    ],
+    "fecha": "2026-04-07T15:51:42.031148"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "tipo": "bar chart",
+        "confianza": 0.503
+      },
+      {
+        "nombre": "images.jpg",
+        "tipo": "product image",
+        "confianza": 0.874
+      },
+      {
+        "nombre": "medallas.png",
+        "tipo": "bar chart",
+        "confianza": 0.521
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "tipo": "table of data",
+        "confianza": 0.5
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "content_type": "text/csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png",
+        "content_type": "image/png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg",
+        "content_type": "image/jpeg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png",
+        "content_type": "image/png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png",
+        "content_type": "image/png"
+      }
+    ],
+    "fecha": "2026-04-07T16:33:17.715522"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081QAAAA==",
+    "asunto": "adjunto",
+    "preview": "adjunto el pdf de ejemplo a ver como lo lee\r\n\r\n--\r\n\r\n\r\nMiguel Cobos",
+    "imagenes": [],
+    "accion": "responder",
+    "respuesta": "texto",
+    "attachments": [
+      {
+        "nombre": "Ejemplo-de-descarga-pdf.pdf",
+        "ruta": "temp/Ejemplo-de-descarga-pdf.pdf",
+        "content_type": "application/pdf"
+      }
+    ],
+    "fecha": "2026-04-07T16:33:18.940958"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "accion": "responder",
+    "respuesta": "El cargo se realizar\u00e1 en los pr\u00f3ximos d\u00edas a partir de su n\u00famero de tarjeta de cr\u00e9dito XXXXXXXXXXXX5729. El monto de la factura se debe de inmediato.",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "content_type": "application/pdf"
+      }
+    ],
+    "fecha": "2026-04-07T16:33:21.701548"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "tipo": "product image",
+        "confianza": 0.471,
+        "descripcion": "\"Una imagen de tipo 'product image' es una representaci\u00f3n visual de un producto o servicio que se utiliza para promocionar, vender o describir sus caracter\u00edsticas y beneficios.\""
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "tipo": "product image",
+        "confianza": 0.486,
+        "descripcion": "Una imagen de tipo \"product image\" es una representaci\u00f3n visual detallada y atractiva de un producto, dise\u00f1ada para promocionarlo y persuadir al comprador."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T20:05:03.604092"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "tipo": "bar chart",
+        "confianza": 0.503,
+        "descripcion": "Una imagen de tipo \"bar chart\" (gr\u00e1fico de barras) es un diagrama que representa datos num\u00e9ricos utilizando barras verticales de diferentes alturas o anchuras para mostrar tendencias y comparaciones entre valores."
+      },
+      {
+        "nombre": "images.jpg",
+        "tipo": "product image",
+        "confianza": 0.874,
+        "descripcion": "Una imagen de tipo \"product image\" es una representaci\u00f3n visual de un producto o servicio, utilizada para promocionar y presentar sus caracter\u00edsticas y beneficios."
+      },
+      {
+        "nombre": "medallas.png",
+        "tipo": "bar chart",
+        "confianza": 0.521,
+        "descripcion": "Una imagen de tipo \"bar chart\" (gr\u00e1fico de barras) es un diagrama que representa datos cuantitativos como rect\u00e1ngulos o barras de diferentes alturas, donde cada barra se corresponde con una categor\u00eda o grupo y su altura indica el valor asociado."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "tipo": "table of data",
+        "confianza": 0.5,
+        "descripcion": "Una imagen de tipo \"table of data\" es una representaci\u00f3n gr\u00e1fica de datos organizados en filas y columnas, similar a un tablero de estad\u00edsticas."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-07T20:05:13.045005"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T20:05:25.304342"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "tipo": "product image",
+        "confianza": 0.471,
+        "descripcion": "\"Una imagen de tipo 'product image' es una representaci\u00f3n visual detallada y atractiva del producto o servicio que se comercializa, dise\u00f1ada para atraer la atenci\u00f3n y aumentar las ventas.\""
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "tipo": "product image",
+        "confianza": 0.486,
+        "descripcion": "Una imagen de tipo \"product image\" es una representaci\u00f3n visual del producto que se desea vender, dise\u00f1ada para atraer la atenci\u00f3n del comprador y transmitir caracter\u00edsticas y beneficios del producto."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T20:14:00.689271"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "tipo": "bar chart",
+        "confianza": 0.503,
+        "descripcion": "Una imagen de tipo \"bar chart\" (gr\u00e1fico de barras) es una representaci\u00f3n visual que utiliza barra recta para mostrar comparaciones entre varias categor\u00edas o valores."
+      },
+      {
+        "nombre": "images.jpg",
+        "tipo": "product image",
+        "confianza": 0.874,
+        "descripcion": "Una imagen de tipo \"product image\" es una representaci\u00f3n visual detallada y atractiva de un producto o servicio que se utiliza para promocionar, vender o presentarlo en l\u00ednea."
+      },
+      {
+        "nombre": "medallas.png",
+        "tipo": "bar chart",
+        "confianza": 0.521,
+        "descripcion": "Una imagen de tipo \"bar chart\" (gr\u00e1fica de barras) es una representaci\u00f3n visual que compara cantidades o valores utilizando rect\u00e1ngulos horizontales de diferentes alturas y anchuras."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "tipo": "table of data",
+        "confianza": 0.5,
+        "descripcion": "Una imagen de tipo \"table of data\" es un gr\u00e1fico que presenta datos num\u00e9ricos o cuantitativos organizados en forma de tabla, usualmente con columnas y filas para facilitar su visualizaci\u00f3n y comprensi\u00f3n."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-07T20:14:06.979260"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T20:14:15.845833"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "tipo": "group of people",
+        "confianza": 0.4,
+        "descripcion": "\"Grupos de personas en una cola de espera\"."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "tipo": "palace",
+        "confianza": 0.991,
+        "descripcion": "Palacio real franc\u00e9s con arquitectura impresionante y jardines bien cuidados."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "tipo": "monument",
+        "confianza": 0.437,
+        "descripcion": "\"Torre sin finitud, rodeada de silencio y sombras.\""
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "No pierdas tres horas para subir; se disfruta mucho m\u00e1s desde lejos. La realidad es que la Torre Eiffel es un icono mundial, pero la experiencia puede ser desalentadora debido a las filas interminables y vallas de seguridad.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T21:21:24.768909"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "tipo": "bar chart",
+        "confianza": 0.632,
+        "descripcion": "Gr\u00e1fica de barras que muestra tendencias de ventas."
+      },
+      {
+        "nombre": "images.jpg",
+        "tipo": "product",
+        "confianza": 0.698,
+        "descripcion": "\"Mejor coleccion de archivos en una presentaci\u00f3n\"."
+      },
+      {
+        "nombre": "medallas.png",
+        "tipo": "table of data",
+        "confianza": 0.477,
+        "descripcion": "\"Medallas y premios en una tabla de datos\"."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "tipo": "table of data",
+        "confianza": 0.602,
+        "descripcion": "Gr\u00e1fico de poblaci\u00f3n en Galicia, representando datos demogr\u00e1ficos."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-07T21:21:26.584978"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "accion": "archivar",
+    "respuesta": "Factura emitida correctamente. El pago se realizar\u00e1 en los pr\u00f3ximos d\u00edas.",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T21:21:28.876444"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "La imagen muestra a Minnie Mouse y Mickey Mouse, ambos representantes ic\u00f3nicos del mundo Disney, posando frente a un famoso castillo que recuerda al Cenit de Lucrecia en Venecia. El contexto implica una cr\u00edtica a la forma en que se puede disfrutar de los lugares tur\u00edsticos emblem\u00e1ticos, que, en lugar de ser un momento \u00fanico y agradable, pueden transformarse en filas largas y barreras de seguridad que reducen su encanto."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "El Palacio Real es un ejemplo de los lugares tur\u00edsticos que pueden ser m\u00e1s impresionantes en fotograf\u00edas publicitarias que en la realidad. Aqu\u00ed se puede ver una multitud de personas que esperan en larga fila para visitar el edificio, as\u00ed como un gran n\u00famero de seguridad y vigilancia que rompen la ilusi\u00f3n de ser solo ante el monumento. La verdad es que la experiencia tur\u00edstica puede ser muy diferente a lo que se promociona en las im\u00e1genes publicitarias."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Par\u00eds es una ciudad que sigue sorprendiendo y seduciendo a los visitantes con su belleza intemporal, pero tambi\u00e9n es importante tener en cuenta que algunos lugares tur\u00edsticos emblem\u00e1ticos pueden decepcionar en la realidad.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T21:59:32.104613"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "La imagen muestra una pantalla de un programa inform\u00e1tico que presenta un gr\u00e1fico hist\u00f3rico de la actividad de un grupo, con datos estad\u00edsticos y una tabla comparativa de los resultados."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "\"Imagen de dos dispositivos electr\u00f3nicos con caracter\u00edsticas similares, uno de ellos con una ranura para cartuchos y otro sin ella.\""
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "La imagen muestra una p\u00e1gina web que presenta un gr\u00e1fico en barra colorido, con los resultados al final. El gr\u00e1fico contiene diferentes categor\u00edas con n\u00fameros en las barras y est\u00e1 ordenado de acuerdo a la cantidad de medallas que cada categor\u00eda ha obtenido. A continuaci\u00f3n del gr\u00e1fico hay un texto que dice \"medallas de oro, plata y bronce en los juegos del mundo\" en espa\u00f1ol, y debajo, una lista con las medallas obtenidas por algunos pa\u00edses."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen es un gr\u00e1fico de barras que muestra una comparaci\u00f3n entre distintos grupos de poblaci\u00f3n en Galicia, en la campa\u00f1a electoral para las elecciones generales de 2019. Se muestran los resultados de las elecciones de 2019 y de la campa\u00f1a actual de las elecciones generales de 2023 en una escala que representa el porcentaje de apoyo a un partido pol\u00edtico espec\u00edfico. Los datos se presentan como \"Hombres\" y \"Mujeres\". El gr\u00e1fico est\u00e1 etiquetado con los nombres de los partidos que competieron, aunque solo es posible leer uno de ellos, y la fecha en la campa\u00f1a electoral actual \"2023\". Se puede ver que algunos grupos han experimentado una aumento significativa en su apoyo al partido desde las elecciones anteriores."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Estoy listo para analizar y procesar estos archivos seg\u00fan sea necesario.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-07T21:59:37.861835"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "accion": "responder",
+    "respuesta": "Estoy revis\u00e1ndolo.",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-07T21:59:44.421409"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "La imagen muestra dos personajes disfrazados como Mickey Mouse y Minnie Mouse posando frente a Cinderella Castle en Disneyland. Los disfraces parecen ser detallados y coloridos, pero al igual que el famoso castillo de Cinderella, es com\u00fan encontrar grandes multitudes en estos parques tem\u00e1ticos, lo que puede dar lugar a largas filas y un ambiente muy ocupado. Sin embargo, el encanto de Disneyland se encuentra en muchas ocasiones m\u00e1s all\u00e1 de las multitudes y la continuaci\u00f3n de espect\u00e1culos y experiencias memorables."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "La cr\u00edtica a los lugares tur\u00edsticos comienza con la Torre Eiffel, se\u00f1alando que mientras es un icono mundial, en realidad se enfrentan filas interminables y vallas de seguridad que rompen el encanto. Se sugiere que se disfruta mucho m\u00e1s desde lejos. El contexto no proporciona una imagen espec\u00edfica del lugar, por lo tanto, la respuesta se limita a la cr\u00edtica generalizada sobre los lugares tur\u00edsticos."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "Aqu\u00ed te presento un resumen de 1-2 frases claras:\n\n\"Par\u00eds, la capital francesa, es una ciudad que sorprende y seduce a los visitantes con su belleza intemporal, desde monumentos m\u00edticos hasta castillos bellos y gastronom\u00eda reconocida en todo el mundo. La mejor \u00e9poca para viajar es primavera, cuando el tiempo es suave y las colas son manejables.\""
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Considera la cr\u00edtica sobre los lugares tur\u00edsticos y piensa en la experiencia que deseas tener en Par\u00eds, como disfrutar del encanto de la ciudad sin las largas filas y vallas de seguridad. Tambi\u00e9n puedes considerar visitar Disneyland en primavera, cuando el tiempo es suave y las colas son manejables.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T10:16:59.040498"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico estad\u00edstico con datos y una representaci\u00f3n en 3D que muestra varias barras de diferentes colores. Los datos se refieren a la probabilidad de que un terremoto ocurra, ya que hay un marcador que indica \"Probabilidad\". El gr\u00e1fico se compara con una l\u00ednea roja en el eje izquierdo, que representa un valor del 0% al 100%. La imagen tambi\u00e9n contiene un n\u00famero de palabras en un archivo adjunto y un porcentaje \"97.5\" junto a la palabra \"Colecci\u00f3n\", lo que sugiere que es una colecci\u00f3n de archivos. El contexto del gr\u00e1fico parece estar relacionado con el an\u00e1lisis de datos en un campo cient\u00edfico o t\u00e9cnico, como ingenier\u00eda geol\u00f3gica o geof\u00edsica, en la cual se est\u00e1n analizando probabilidades de terremotos."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "Im\u00e1genes de dos consoles de juego NES, con una descripci\u00f3n del modelo y n\u00famero de serie."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "El gr\u00e1fico muestra una tabla de resultados en una competici\u00f3n, con medallas y puntos correspondientes."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico en l\u00ednea que compara la tasa de positivos de COVID-19 en diferentes ciudades. Los datos est\u00e1n representados mediante barras de colores y una escala num\u00e9rica. El gr\u00e1fico es de Galicia y muestra las cifras actualizadas hasta el 20 de junio. Se utiliza para comparar la incidencia del virus en diferentes localidades de la regi\u00f3n."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": "Here is a summary of the document in 1-2 sentences:\n\nThis is a list of invoices (facturas) from various purchases, with details such as date of emission, type of operation, and amounts paid or owed, including taxes (IVA, IRE, IRP). The document appears to be a record of financial transactions for a company."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "La colecci\u00f3n de archivos adjunta parece ser un conjunto de documentos financieros y estad\u00edsticas relacionadas con la probabilidad de terremotos. Las im\u00e1genes incluyen gr\u00e1ficos, consolas de juego y una tabla de resultados. La informaci\u00f3n proporcionada sugiere que se trata de un an\u00e1lisis de datos en el campo cient\u00edfico o t\u00e9cnico.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-08T10:17:02.259354"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "Here is a summary of the document in 1-2 sentences:\n\nThis is a invoice from Free2move Iberia S.A.U. to Miguel Cobos Sanchez for a rental car service, with a total cost of \u20ac5.47 and VAT (IVA) of \u20ac0.95, dated April 5, 2026. The payment will be charged to the credit card XXXXXXXXXXXX5729 in the next few days."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "Su viaje ha sido registrado con \u00e9xito.",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T10:17:06.441997"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "\"Torre Eiffel, s\u00ed es un \u00edcono tur\u00edstico, pero la verdad es que se pierde mucho m\u00e1s en cuanto a la experiencia real. Es mejor disfrutar de otros lugares con menos filas y vallas.\""
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "Esta imagen critica los lugares tur\u00edsticos, sugiriendo que la realidad es muy diferente de lo que se promueve en publicidad. Se muestra un castillo o palacio hist\u00f3rico con r\u00fasticas paredes y arcos que parecen ser una reconstrucci\u00f3n o un restaurante en lugar de un verdadero monumento hist\u00f3rico. La gente puede ser vista caminando frente al edificio, y hay una gu\u00eda tur\u00edstica en la parte inferior. Tambi\u00e9n se observan jardines y plantas bien cuidados, pero lo que destaca es la falta de visibilidad hacia el monumento por la multitud de personas. El veredicto sugiere que no se disfruta tanto en estos lugares como se promueve y que, en general, los lugares tur\u00edsticos son m\u00e1s interesantes desde un punto de vista visual y cultural."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "\"Par\u00eds, la ciudad que rima con monumentos m\u00edticos, arte de vivir, gastronom\u00eda reconocida y experiencias inusuales, siempre sorprendiendo y seduciendo a los visitantes\"."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "La cr\u00edtica a los lugares tur\u00edsticos es v\u00e1lida, ya que a menudo la realidad no coincide con la expectativa. La Torre Eiffel puede ser un icono mundial, pero la experiencia real puede ser frustrante debido a las filas interminables y la falta de espacio para disfrutar del entorno.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T12:37:45.656126"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "La imagen muestra una interfaz de Excel con un gr\u00e1fico, donde se observan varios gr\u00e1ficos y tablas de datos."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "Ninguna imagen proporcionada."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "La imagen muestra una lista en espa\u00f1ol que muestra los resultados de las medallas ganadas por deportistas en juegos deportivos internacionales. Cada deportista tiene un n\u00famero asociado con su posici\u00f3n en la clasificaci\u00f3n, y se incluyen palabras como \"medal\", \"Europa\", \"Sport\", etc. El texto en la parte superior de la imagen es \"MADRID\", lo que podr\u00eda indicar que la lista est\u00e1 relacionada a los deportistas m\u00e1s destacados en Madrid."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "Este gr\u00e1fico muestra las edades de los j\u00f3venes en Galicia para el a\u00f1o 2021. La mayor\u00eda de los j\u00f3venes son hombres, y la edad m\u00e1s representada es entre 25 y 34 a\u00f1os. Los ciudadanos de Galicia tienen una esperanza de vida promedio alta, con un punto m\u00e1ximo en la edad de 96 a\u00f1os."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": "La informaci\u00f3n proporcionada es un registro de facturas de compras, que incluye el n\u00famero de identificaci\u00f3n del informado, tipo de registro, fecha de emisi\u00f3n, condici\u00f3n de la operaci\u00f3n y otros detalles de cada factura, con informaci\u00f3n adicional sobre los impuestos y timbres asociados."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Estoy revis\u00e1ndolo.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-08T12:38:10.455215"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "Aqu\u00ed est\u00e1 la factura para un alquiler de coche con Fiat 500e desde Vicente Jimeno hasta el Gas\u00f3metro, duraci\u00f3n 17 minutos, precio total de 21 euros y cargo a la tarjeta de cr\u00e9dito en los pr\u00f3ximos d\u00edas."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": {
+      "Viaje exitoso": "S\u00ed, tu viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid dur\u00f3 17 minutos y el precio total fue de 21 euros. Se cargar\u00e1 en tus pr\u00f3ximos d\u00edas."
+    },
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T12:38:15.840672"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "La imagen muestra dos figuras iconoscopiadas, que parecen ser Minnie Mouse y Mickey Mouse. Estos son personajes famos en Disneylandia, pero la experiencia real de visitar este parque tem\u00e1tico puede ser un poco distante de la verdad en la promoci\u00f3n publicitaria. Aunque el parque se presenta como alegre y divertido, la carga tur\u00edstica puede llevar a filas largas y una experiencia menos personalizada que esperada."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "La imagen muestra una vista deslumbrante de un castillo franc\u00e9s, donde la arquitectura g\u00f3tica y los jardines de estilo formal dan a la zona un aspecto r\u00fastico y elegante. La perspectiva desde lo alto de la torre ofrece una comprensi\u00f3n m\u00e1s amplia del entorno circundante. Sin embargo, la realidad es que el castillo est\u00e1 rodeado por barreras y fences, y las visitas est\u00e1n limitadas a un n\u00famero determinado, lo que puede detrimentar la experiencia tur\u00edstica. La cr\u00edtica alude a los lugares turisticos, destacando que a pesar de ser famosos, pueden tener inconvenientes como la presencia de barreras y l\u00edmitaciones en su acceso."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "\"Par\u00eds, la ciudad eterna que sorprende y seduce a los visitantes con su belleza intemporal y ofrece una experiencia \u00fanica para disfrutar de arte, gastronom\u00eda, fiesta y aventuras inusuales.\""
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T12:46:00.808655"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "La imagen muestra una pantalla con un gr\u00e1fico de barras que compara el n\u00famero de casos de COVID-19 entre diferentes pa\u00edses. Al lado del gr\u00e1fico, hay un resumen con los datos correspondientes a cada pa\u00eds. En la pesta\u00f1a superior izquierda, se muestran los datos hist\u00f3ricos y se puede ver c\u00f3mo las estad\u00edsticas han evolucionado a lo largo de las semanas. Adem\u00e1s, hay una pesta\u00f1a derecha que muestra un resumen de una encuesta realizada en Espa\u00f1a sobre la satisfacci\u00f3n con el estado de los negocios. El gr\u00e1fico muestra resultados como porcentaje de respuestas y el texto \"comparativo entre la situaci\u00f3n actual y la prevista\" junto a las barras que representan el porcentaje de cada opci\u00f3n de respuesta."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "Vintage video game consoles, Sega Genesis y NES, junto con su controlador."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico que representa el rendimiento de diferentes equipos en una competici\u00f3n deportiva, probablemente baloncesto. Los equipos est\u00e1n organizados de acuerdo con su posici\u00f3n en la clasificaci\u00f3n y se comparan a trav\u00e9s de 3 \u00e1reas: \"Miguel\", \"Yoel\" y \"Bronze\". El equipo en primer lugar es \"Sacramento\", seguido por \"Dallas\" y \"Utah Jazz\". La mejor temporada fue la de los equipos en primero y segundo lugar, mientras que el peor rendimiento lo tuvieron los equipos ubicados en \u00faltimo lugar."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico con barras que representa la edad de la poblaci\u00f3n en una comunidad espa\u00f1ola, Galicia, seg\u00fan los censos de 2016. El gr\u00e1fico est\u00e1 dividido en seis categor\u00edas de edad: menos de 18 a\u00f1os, entre 18 y 24, entre 25 y 39, entre 40 y 59, entre 60 y 74, y m\u00e1s de 75 a\u00f1os. La mayor parte de la poblaci\u00f3n est\u00e1 en el grupo de edad entre 18 y 24 a\u00f1os, seguido por los entre 25 y 39. La menor representaci\u00f3n es para aquellos mayores de 75 a\u00f1os. El gr\u00e1fico parece ser utilizado para un an\u00e1lisis demogr\u00e1fico y comparativo de la composici\u00f3n de edades en la poblaci\u00f3n de Galicia. Adem\u00e1s, se muestra un mapa del municipio, cuya ubicaci\u00f3n es identificada como \"Porra\u00edde\", y que se encuentra en el norte de Galicia, junto con una descripci\u00f3n geogr\u00e1fica: \"A\u00f1o 2016. Municipio en el norte de Galicia\". El gr\u00e1fico tambi\u00e9n muestra un n\u00famero de personas por cada edad, lo que indica el tama\u00f1o de la poblaci\u00f3n perteneciente a cada categor\u00eda de edad."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": "La informaci\u00f3n proporcionada es una lista de facturas y comprobantes de compras con detalles como n\u00famero de identificaci\u00f3n del informado, tipo de registro, fecha de emision, condici\u00f3n de la operaci\u00f3n, montos gravados y exentos, total del comprobante y otros datos relevantes."
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "No se requiere respuesta para este correo electr\u00f3nico. La colecci\u00f3n de archivos adjunta es informaci\u00f3n estad\u00edstica y demogr\u00e1fica que no parece necesitar una respuesta por parte del destinatario.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-08T12:46:30.093895"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "\"Factura electr\u00f3nica emitida por Free2move Iberia S.A.U. a nombre de Miguel Cobos Sanchez para un alquiler de 17 minutos de un veh\u00edculo Fiat 500e en Madrid, con un costo total de 21,00 euros y una tasa de IVA del 0,95%.\""
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "\u00a1Hasta pronto!",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T12:46:38.452169"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "La imagen es una cr\u00edtica sobre los lugares tur\u00edsticos, en concreto al castillo de Disney. Los ejemplos citados son la Torre Eiffel y el personaje Mickey Mouse en su castillo de Disney. El texto se\u00f1ala que estas atracciones tienen filas largas e interminables, mientras que realmente se disfrutan mucho m\u00e1s de una manera diferente, lo que sugiere que la experiencia en esos lugares puede ser distinta de la percepci\u00f3n popular."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "En este parque, la arquitectura ornamental y los jardines bien cuidados del castillo franc\u00e9s se destacan frente al cielo azul. Sin embargo, la realidad puede ser diferente a lo que se percibe en im\u00e1genes promocionales. A pesar de su belleza y el valor hist\u00f3rico, los turistas pueden encontrarse con largas filas y vallas de seguridad que pueden detractar del encanto del lugar. Es posible que el tiempo pasado en este parque sea m\u00e1s agradable si se evitan las horas pico de turismo."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "\"Un gu\u00eda indispensable para viajar a Par\u00eds, con informaci\u00f3n detallada sobre c\u00f3mo llegar, moverse, gastronom\u00eda, actividades y lugares must-see, y consejos \u00fatiles para disfrutar al m\u00e1ximo de la ciudad de la luz.\""
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T13:09:52.479631"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "Im\u00e1gen de una pantalla que muestra un gr\u00e1fico y datos estad\u00edsticos."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "El dispositivo negro en la imagen, que parece ser un modem o router, se puede ver en dos posiciones: cerrado y abierto. La imagen tambi\u00e9n muestra otra fotograf\u00eda de \u00e9l con una configuraci\u00f3n de cabos en la parte inferior."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "Es un gr\u00e1fico que muestra datos y se refiere a las medallas conseguidas en competencias deportivas, utilizando una escala num\u00e9rica para representar los resultados."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen muestra una gr\u00e1fica que comparte las edades de los habitantes del barrio de Galicia en 2021 y la media de edad en Espa\u00f1a."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": "Registro de compras con detalles de facturas, incluyendo tipo de registro, fecha de emisi\u00f3n, condici\u00f3n de la operaci\u00f3n y timbrado del comprobante, entre otros."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Estoy revis\u00e1ndolo.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-08T13:10:16.876165"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "La factura n\u00famero 47025131 es una recaudaci\u00f3n por un alquiler de veh\u00edculo el\u00e9ctrico Fiat 500e con un costo total de 5,47 euros y un pago por tarjeta de cr\u00e9dito pendiente."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Estoy revis\u00e1ndolo.",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-08T13:10:24.950840"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "La imagen muestra dos personajes vestidos como Minnie Mouse y Mickey Mouse, junto a una torre azul con un castillo en la parte superior. Sin embargo, la realidad es que estos lugares tur\u00edsticos, como los parques tem\u00e1ticos, son conocidos por sus largas filas y vallas de seguridad que rompen el encanto de visitar iconos mundiales como el Torre Eiffel."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "La imagen muestra una fotograf\u00eda de un sitio tur\u00edstico europeo, posiblemente Versailles, donde la arquitectura hist\u00f3rica y paisajismo son imprescindibles. Sin embargo, el aspecto actual del sitio con multitud de personas y elementos no originales como bancas y vallas de seguridad detractan del encanto original de los lugares tur\u00edsticos como Versailles."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "\"Par\u00eds: la ciudad de la luz donde la belleza intemporal se fusiona con la gastronom\u00eda reconocida en todo el mundo y la animaci\u00f3n festiva, ofreciendo una experiencia \u00fanica para todos los visitantes.\""
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "La realidad detr\u00e1s de los lugares tur\u00edsticos iconos como la Torre Eiffel y Versailles es que el encanto se rompe por las largas filas y vallas de seguridad. Considera explorar otros aspectos de la ciudad o reserva un tiempo espec\u00edfico para evitar la multitud y disfrutar al m\u00e1ximo.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-09T11:09:27.472769"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "Es una imagen de un gr\u00e1fico estad\u00edstico en una pantalla, mostrando gr\u00e1ficos y datos que parecen estar en espa\u00f1ol. Se ve un histograma principal con dos barras, la primera roja y la segunda azul, y varios gr\u00e1ficos secundarios alrededor de \u00e9l. En el histograma, se pueden ver puntos representados en rojo y azul y una curva roja que sugiere un regreso lineal. Adem\u00e1s, hay dos barras m\u00e1s peque\u00f1as que muestran porcentaje los resultados de una encuesta o prueba, con valores que no se pueden ver completamente, pero parecen ser el 67% en rojo y el 33% en azul. En la parte inferior izquierda del gr\u00e1fico, se puede ver la leyenda, aunque es dif\u00edcil leer todas las palabras debido a su peque\u00f1ez. En la parte superior derecha de la imagen, se observa un men\u00fa o pesta\u00f1a que dice \"Comparaci\u00f3n 1/2\", lo que sugiere que existe otra p\u00e1gina o fichero relacionado con este gr\u00e1fico. La fuente del gr\u00e1fico parece ser un programa de an\u00e1lisis estad\u00edstico o una herramienta de pruebas en l\u00ednea, y la pantalla mostra un men\u00fa desplegable que contiene opciones como \"Aplicaci\u00f3n\", \"Cortar\", \"Copiar\", \"Pegar\" y \"Guardar\" (en espa\u00f1ol: \"Aplicaci\u00f3n\", \"Cortar\", \"Copiar\", \"Pegar\" y \"Guardar\"). El estilo de la imagen es de una captura de pantalla de un navegador o una aplicaci\u00f3n inform\u00e1tica, con una interfaz de usuario que muestra datos estad\u00edsticos en forma visual."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "La imagen muestra un videojuego de N64, una consola de videojuegos de la generaci\u00f3n de 1995 que fue producida por Nintendo."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "Gr\u00e1fico con datos estad\u00edsticos en espa\u00f1ol, representando el rendimiento del equipo espa\u00f1ol en la Copa del Mundo de la FIFA."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico que muestra porcentajes la representaci\u00f3n de diferentes grupos de edad en una poblaci\u00f3n, con el 89% siendo mayores de 65 a\u00f1os."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": "Registro de compras con detalles de facturas, condici\u00f3n de operaci\u00f3n y timbrado, incluyendo montos gravados y exentos de IVA e IRP."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Estoy revis\u00e1ndolo.",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-09T11:09:57.308586"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "La factura n\u00ba 47025131 es un recibo para un alquiler de un veh\u00edculo Fiat 500e entre el 05 de abril y el 16:34 del mismo d\u00eda, con un costo total de \u20ac5,47 incluyendo IVA."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "\u00bfPuedes proporcionarnos m\u00e1s detalles sobre tu viaje?",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-09T11:10:04.854649"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa084AAAAA==",
+    "asunto": "viaje a paris",
+    "preview": "Esto es una critica a los tipicos lugares turisticos\r\n\r\n  *   Torre Eiffel: Es el icono mundial, pero la realidad son filas interminables y vallas de seguridad que rompen el encanto. Veredicto: No pie",
+    "imagenes": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "descripcion": "El Castillo de Disney es un s\u00edmbolo ic\u00f3nico y atractivo para muchos, pero la realidad es que puede resultar en filas largas y se requiere un paso completo (y no solo tres horas) para disfrutar su visi\u00f3n completa. En lugar de esto, los mejores momentos pueden ser capturados frente a la torre Eiffel, que ofrece una experiencia mucho m\u00e1s encantadora y libre de obstrucciones."
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "descripcion": "Esta imagen muestra un castillo renacentista con un jard\u00edn central, rodeado de \u00e1rboles, y una gran plaza frente a \u00e9l. En las tierras alrededor del castillo hay cultivos bien cuidados. El clima es agradable con buenas condiciones meteorol\u00f3gicas, permitiendo el disfrute del parque. La estructura arquitect\u00f3nica y la vegetaci\u00f3n lo convierten en un lugar atractivo para visitar."
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "descripcion": "imagen no identificada"
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "resumen": "\"Par\u00eds, la capital francesa, sorprende y seduce a los visitantes con su belleza intemporal, desde monumentos m\u00edticos hasta un arte de vivir y disfrutar de una gastronom\u00eda reconocida en todo el mundo.\""
+      }
+    ],
+    "accion": "archivar",
+    "respuesta": "Considera visitar la Torre Eiffel en lugar del Castillo de Disney para disfrutar de una experiencia m\u00e1s encantadora y libre de obstrucciones.",
+    "attachments": [
+      {
+        "nombre": "eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg",
+        "ruta": "temp/eu_xx_wdw_eu_generic_ticket_mob_364cfc5d.jpeg"
+      },
+      {
+        "nombre": "Palacio-de-Versalles.jpg",
+        "ruta": "temp/Palacio-de-Versalles.jpg"
+      },
+      {
+        "nombre": "denys-nevozhai-UzagqG756OU-unsplash.webp",
+        "ruta": "temp/denys-nevozhai-UzagqG756OU-unsplash.webp"
+      },
+      {
+        "nombre": "destinia-guia-viaje-paris_es.pdf",
+        "ruta": "temp/destinia-guia-viaje-paris_es.pdf"
+      }
+    ],
+    "fecha": "2026-04-14T13:58:59.106440"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081gAAAA==",
+    "asunto": "coleccion",
+    "preview": "Adjunto la mejor coleccion de archivos de la historia, no te lo puedes perder ndomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be",
+    "imagenes": [
+      {
+        "nombre": "grafica.png",
+        "descripcion": "La imagen muestra una pantalla de un programa de gr\u00e1ficos que muestra distintos gr\u00e1ficos. Algunos datos clave presentados en la imagen son 0.07, 92.63 y 1985. El gr\u00e1fico principal parece ser un histograma con una serie de barras alta y dos picos rojos que indican algunos puntos significativos o valores m\u00ednimos y m\u00e1ximos en la escala del eje horizontal, y los valores aumentan progresivamente desde el eje vertical. Adem\u00e1s, hay otra secci\u00f3n de gr\u00e1ficos m\u00e1s peque\u00f1a que muestra varios gr\u00e1ficos secundarios con barras de diferentes colores y medidas. Al lado derecho, se pueden ver palabras como \"riesgos\", \"datos\" y \"gr\u00e1fico\". La interfaz del programa incluye un cuadro de di\u00e1logo emergente superior izquierdo con la opci\u00f3n \"Cerrar\" y una barra de desplazamiento en el centro de la pantalla."
+      },
+      {
+        "nombre": "images.jpg",
+        "descripcion": "Lo siento, pero no hay una imagen adjunta para describir. Por favor proporciona la imagen para que pueda ayudarte con su descripci\u00f3n."
+      },
+      {
+        "nombre": "medallas.png",
+        "descripcion": "La imagen es una captura de pantalla del sitio web del Madrid Club de F\u00fatbol. En la p\u00e1gina se puede ver un gr\u00e1fico que muestra los resultados de las elecciones municipales de 2019 en Madrid, en el cual los partidos pol\u00edticos m\u00e1s destacados como Ciudadanos, PP y M\u00e1s Madrid est\u00e1n representados con cifras importantes. El gr\u00e1fico indica la cantidad de votos y el n\u00famero de consejales obtenidos por cada partido."
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "descripcion": "La imagen muestra un gr\u00e1fico de barras que muestra la evoluci\u00f3n de poblaci\u00f3n en Galicia a lo largo de los a\u00f1os, desde 1990 hasta 2021. El gr\u00e1fico presenta datos para un a\u00f1o determinado en el eje vertical y una escala de edad en el horizontal, que va desde los 5 a\u00f1os hasta los 85 a\u00f1os. Se destaca la tendencia del aumento de poblaci\u00f3n entre los 35 y los 70 a\u00f1os, mientras que disminuye a partir de los 75 a\u00f1os. La leyenda del gr\u00e1fico incluye textos en espa\u00f1ol que proporcionan informaci\u00f3n sobre la representaci\u00f3n de los datos, como que las barras rojas representan la poblaci\u00f3n masculina y las azules la femenina. El t\u00edtulo \"Poblaci\u00f3n 2021\" indica que se trata de una visualizaci\u00f3n actualizada con datos recientes para el a\u00f1o 2021. La imagen parece haber sido publicada en un contexto que menciona la mejor colecci\u00f3n de archivos hist\u00f3ricos, lo que podr\u00eda sugerir que la informaci\u00f3n presenta datos confiables y actualizados sobre la demograf\u00eda gallega."
+      }
+    ],
+    "documentos": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "resumen": ""
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Para entender mejor la coleccion de archivos adjunta, es necesario proporcionar m\u00e1s contexto y detalles sobre los archivos que se incluyen en ella. Algunos puntos importantes a considerar son: \u00bfCu\u00e1les son los archivos m\u00e1s relevantes o significativos que se incluyen en la colecci\u00f3n? \u00bfQu\u00e9 informaci\u00f3n pueden obtenerse de ellos? \u00bfHay alg\u00fan archivo que requiera una respuesta espec\u00edfica?",
+    "attachments": [
+      {
+        "nombre": "DetalleComprobantesRegistrados SIN FORMATO.csv",
+        "ruta": "temp/DetalleComprobantesRegistrados SIN FORMATO.csv"
+      },
+      {
+        "nombre": "grafica.png",
+        "ruta": "temp/grafica.png"
+      },
+      {
+        "nombre": "images.jpg",
+        "ruta": "temp/images.jpg"
+      },
+      {
+        "nombre": "medallas.png",
+        "ruta": "temp/medallas.png"
+      },
+      {
+        "nombre": "grafico_poblacion_galicia.png",
+        "ruta": "temp/grafico_poblacion_galicia.png"
+      }
+    ],
+    "fecha": "2026-04-14T13:59:29.086782"
+  },
+  {
+    "message_id": "AQMkADAwATNiZmYAZS1hZTY0LWZlZDUtMDACLTAwCgBGAAAD6RzWjKBaWEWcjM251g9g8gcAIaBXiPg3t0yJ25jQUgGLlgAAAgEMAAAAIaBXiPg3t0yJ25jQUgGLlgAAAa081AAAAA==",
+    "asunto": "Fwd: Resumen de tu alquiler",
+    "preview": "________________________________\r\n\r\nHola Miguel,\r\n\r\nEsperamos que hayas tenido un gran viaje desde Calle de Vicente Jimeno 23, 28035 Madrid hasta Calle del Gas\u00f3metro 18, 28005 Madrid con nosotros.\r\n\r\n",
+    "imagenes": [],
+    "documentos": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "resumen": "La factura n\u00famero 47025131 corresponde al alquiler de un veh\u00edculo Fiat 500e durante 17 minutos con un costo total de 21,00\u20ac, incluyendo IVA y descuentos."
+      }
+    ],
+    "accion": "responder",
+    "respuesta": "Gracias por utilizar nuestros servicios. \u00a1Esperamos verte pronto de nuevo!",
+    "attachments": [
+      {
+        "nombre": "Free2move_ES_260405_10002154_3291000012933696.pdf",
+        "ruta": "temp/Free2move_ES_260405_10002154_3291000012933696.pdf"
+      }
+    ],
+    "fecha": "2026-04-14T13:59:35.912887"
+  }
+]

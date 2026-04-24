@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Agents</title>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+
+        .modo {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .activo {
+            display: block;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        textarea, input {
+            width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .bloque {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            background: #111;
+            color: #0f0;
+            padding: 10px;
+            max-height: 500px;
+            overflow: auto;
+            font-size: 12px;
+        }
+
+        #loader {
+            display: none;
+            font-weight: bold;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🌐 Web Agents</h2>
+
+<button onclick="volver()">⬅ Volver</button>
+
+<br><br>
+
+<!-- SELECTOR MODO -->
+<button onclick="cambiarModo('crawl')">🕸️ Crawl Web</button>
+<button onclick="cambiarModo('analyze')">🔍 Analizar URLs</button>
+<button onclick="cambiarModo('agent')">🤖 Automatizar</button>
+
+<div id="loader">⏳ Procesando...</div>
+
+<!-- ---------------- CRAWL ---------------- -->
+<div id="crawl" class="modo activo">
+
+<div class="bloque">
+<h3>🕸️ Explorar web completa</h3>
+
+<input id="crawl_url" placeholder="https://ejemplo.com"><br>
+<input id="crawl_max" placeholder="Máx páginas (ej: 50)" value="50"><br>
+
+<h4>Opciones:</h4>
+<label><input type="checkbox" id="crawl_resumen"> Resumen IA</label><br>
+<label><input type="checkbox" id="crawl_title" checked> Titular</label><br>
+<label><input type="checkbox" id="crawl_keywords"> Keywords</label><br>
+<label><input type="checkbox" id="crawl_meta"> Metadatos</label><br>
+<label><input type="checkbox" id="crawl_schema"> Schema</label><br>
+<label><input type="checkbox" id="crawl_pixels"> Pixels</label><br>
+<label><input type="checkbox" id="crawl_seo"> SEO Score</label><br>
+
+<br>
+
+<button onclick="ejecutarCrawl()">Ejecutar</button>
+<button onclick="exportar()">📥 Exportar Excel</button>
+
+</div>
+</div>
+
+<!-- ---------------- ANALYZE ---------------- -->
+<div id="analyze" class="modo">
+
+<div class="bloque">
+<h3>🔍 Analizar URLs</h3>
+
+<textarea id="analyze_urls" placeholder="Una URL por línea"></textarea>
+
+<h4>Opciones:</h4>
+<label><input type="checkbox" id="an_resumen"> Resumen IA</label><br>
+<label><input type="checkbox" id="an_title" checked> Titular</label><br>
+<label><input type="checkbox" id="an_keywords"> Keywords</label><br>
+<label><input type="checkbox" id="an_meta"> Metadatos</label><br>
+<label><input type="checkbox" id="an_schema"> Schema</label><br>
+<label><input type="checkbox" id="an_pixels"> Pixels</label><br>
+<label><input type="checkbox" id="an_img"> Imágenes</label><br>
+<label><input type="checkbox" id="an_video"> Videos</label><br>
+<label><input type="checkbox" id="an_seo"> SEO Score</label><br>
+
+<br>
+
+<button onclick="ejecutarAnalyze()">Ejecutar</button>
+<button onclick="exportar()">📥 Exportar Excel</button>
+
+</div>
+</div>
+
+<!-- ---------------- AGENT ---------------- -->
+<div id="agent" class="modo">
+
+<div class="bloque">
+<h3>🤖 Automatizar navegación</h3>
+
+<input id="agent_url" placeholder="URL inicial"><br>
+
+<select id="accion_tipo">
+    <option value="goto">Ir a URL</option>
+    <option value="click">Click</option>
+    <option value="wait">Esperar</option>
+    <option value="get_text">Obtener texto</option>
+</select>
+
+<input id="selector" placeholder="Selector (#id, .class)">
+<input id="valor" placeholder="Valor (ms para wait)">
+
+<br>
+
+<button onclick="addStep()">➕ Añadir paso</button>
+
+<ul id="steps"></ul>
+
+<button onclick="ejecutarAgent()">Ejecutar flujo</button>
+
+</div>
+</div>
+
+<!-- RESULTADO -->
+<pre id="resultado"></pre>
+<script>
+    let ultimoResultado = null
+
+function volver(){
+    window.location.href = "/"
+}
+
+function cambiarModo(modo){
+    document.querySelectorAll(".modo").forEach(m => m.classList.remove("activo"))
+    document.getElementById(modo).classList.add("activo")
+}
+
+function showLoader(show){
+    document.getElementById("loader").style.display = show ? "block" : "none"
+}
+
+function escapeHTML(str){
+    if(!str) return ""
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+}
+
+function toggle(id){
+    const el = document.getElementById(id)
+    if(!el) return
+    el.style.display = el.style.display === "none" ? "block" : "none"
+}
+
+//////////////////////
+// 🔥 NORMALIZAR DATOS
+//////////////////////
+
+function normalizarResultados(lista){
+    return (lista || []).map(r => ({
+        url: r.url,
+        data: r.data || r
+    }))
+}
+
+//////////////////////
+// CRAWL
+//////////////////////
+
+async function ejecutarCrawl(){
+
+    showLoader(true)
+
+    try {
+
+        const res = await fetch("/web/crawl", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                url: document.getElementById("crawl_url").value,
+                max_pages: parseInt(document.getElementById("crawl_max").value) || 50,
+                opciones: {
+                    resumen: document.getElementById("crawl_resumen").checked,
+                    title: document.getElementById("crawl_title").checked,
+                    keywords: document.getElementById("crawl_keywords").checked,
+                    meta: document.getElementById("crawl_meta").checked,
+                    schema: document.getElementById("crawl_schema").checked,
+                    pixels: false,
+                    seo: document.getElementById("crawl_seo").checked
+                }
+            })
+        })
+
+        const text = await res.text()
+
+        if(!res.ok){
+            console.error(text)
+            alert("Error backend crawl")
+            return
+        }
+
+        const data = JSON.parse(text)
+
+        ultimoResultado = normalizarResultados(data.results)
+
+        pintarResultados(ultimoResultado)
+
+    } catch (e) {
+        console.error(e)
+        alert("Error en crawl")
+    }
+
+    showLoader(false)
+}
+
+//////////////////////
+// ANALYZE
+//////////////////////
+
+async function ejecutarAnalyze(){
+
+    showLoader(true)
+
+    try {
+
+        const res = await fetch("/web/analyze", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                urls: document.getElementById("analyze_urls").value
+                    .split("\n")
+                    .filter(u => u.trim()),
+                opciones: {
+                    resumen: document.getElementById("an_resumen").checked,
+                    title: document.getElementById("an_title").checked,
+                    keywords: document.getElementById("an_keywords").checked,
+                    meta: document.getElementById("an_meta").checked,
+                    schema: document.getElementById("an_schema").checked,
+                    pixels: false,
+                    imagenes: document.getElementById("an_img").checked,
+                    videos: document.getElementById("an_video").checked,
+                    seo: document.getElementById("an_seo").checked
+                }
+            })
+        })
+
+        const text = await res.text()
+
+        if(!res.ok){
+            console.error(text)
+            alert("Error backend analyze")
+            return
+        }
+
+        const data = JSON.parse(text)
+
+        ultimoResultado = normalizarResultados(data)
+
+        pintarResultados(ultimoResultado)
+
+    } catch (e) {
+        console.error(e)
+        alert("Error en análisis")
+    }
+
+    showLoader(false)
+}
+
+//////////////////////
+// EXPORTAR 🔥 FIX
+//////////////////////
+
+async function exportar(){
+
+    if(!ultimoResultado || ultimoResultado.length === 0){
+        alert("No hay datos")
+        return
+    }
+
+    try {
+
+        const res = await fetch("/web/export", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ resultados: ultimoResultado })
+        })
+
+        const text = await res.text()
+
+        if(!res.ok){
+            console.error(text)
+            alert("Error backend export")
+            return
+        }
+
+        const data = JSON.parse(text)
+
+        if(data.ruta){
+            window.open(`/files/${data.ruta}`)
+        }
+
+    } catch (e) {
+        console.error(e)
+        alert("Error exportando")
+    }
+}
+
+//////////////////////
+// PIXELS
+//////////////////////
+
+async function cargarPixels(url, divId){
+
+    const div = document.getElementById(divId)
+
+    if(div.style.display === "block"){
+        div.style.display = "none"
+        return
+    }
+
+    div.style.display = "block"
+    div.innerText = "⏳ Analizando pixels..."
+
+    try {
+
+        const res = await fetch("/web/pixels", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ url })
+        })
+
+        const text = await res.text()
+
+        if(!res.ok){
+            console.error(text)
+            div.innerText = "Error backend pixels"
+            return
+        }
+
+        const data = JSON.parse(text)
+
+        let texto = ""
+
+        Object.keys(data.pixels || {}).forEach(p => {
+
+            texto += `\n🔹 ${p.toUpperCase()}\n`
+
+            data.pixels[p].forEach(px => {
+
+                if(typeof px === "string"){
+                    texto += ` - ${px}\n`
+                } else {
+                    texto += ` - ${px.url} [${px.method}]\n`
+                }
+            })
+        })
+
+        div.innerText = texto || "No se detectaron pixels"
+
+        actualizarPixelsEnMemoria(url, data.pixels)
+
+    } catch (e) {
+        console.error(e)
+        div.innerText = "Error analizando pixels"
+    }
+}
+
+function actualizarPixelsEnMemoria(url, pixels){
+
+    if(!ultimoResultado) return
+
+    ultimoResultado.forEach(item => {
+        if(item.url === url){
+            if(!item.data) item.data = {}
+            item.data.pixels = pixels
+        }
+    })
+}
+
+//////////////////////
+// VISUAL (igual)
+//////////////////////
+
+function pintarResultados(data){
+
+    let texto = ""
+
+    data.forEach((r, i) => {
+
+        const id = "item_" + i
+
+        texto += `\n🌐 ${r.url}\n`
+
+        if(r.data){
+
+            if(r.data.title)
+                texto += `📰 ${escapeHTML(r.data.title)}\n`
+
+            texto += `🎯 <span onclick="cargarPixels('${r.url}', '${id}_pixels')" style="cursor:pointer;">Pixels ▼</span>\n`
+            texto += `<div id="${id}_pixels" style="display:none;"></div>\n`
+        }
+
+        texto += "-------------------------\n"
+    })
+
+    document.getElementById("resultado").innerHTML = texto
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Analyzer</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 20px 40px;
+            margin: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .leer {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .crear {
+            background: #2196F3;
+            color: white;
+        }
+
+        .selector {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🤖 AI Analyzer</h1>
+
+<!-- 🔥 SELECTOR DE REGLAS -->
+<div class="selector">
+    <label><strong>Regla activa:</strong></label><br><br>
+    <select id="selectorRegla">
+        <option value="">Sin regla</option>
+    </select>
+</div>
+
+<button class="boton leer" onclick="irLeer()">📖 Leer</button>
+<button class="boton crear" onclick="irCrear()">✨ Crear</button>
+<button class="boton" onclick="irReglas()">🧠 Reglas</button>
+<button class="boton" onclick="irDashboard()">📊 Dashboard</button>
+<button class="boton" onclick="irWeb()">🌐 Web Agents</button>
+<button class="boton" onclick="irWebAI()">🤖 Grabar con Agente IA</button>
+<button class="boton" onclick="irDesktop()">🖥️ Desktop Agent</button>
+<script>
+
+// -----------------------------
+// 🔥 NAVEGACIÓN
+// -----------------------------
+function irLeer(){
+    window.location.href = "/folder"
+}
+
+function irCrear(){
+    window.location.href = "/create"
+}
+
+// -----------------------------
+// 🔥 CARGAR REGLAS
+// -----------------------------
+async function cargarReglas() {
+
+    const res = await fetch("/reglas");
+    const reglas = await res.json();
+
+    const select = document.getElementById("selectorRegla");
+
+    reglas.forEach(r => {
+        const option = document.createElement("option");
+        option.value = r.id;
+        option.textContent = r.nombre;
+        select.appendChild(option);
+    });
+
+    // 🔥 recuperar selección guardada
+    const guardada = localStorage.getItem("regla_id");
+    if (guardada) {
+        select.value = guardada;
+    }
+}
+
+// -----------------------------
+// 🔥 GUARDAR REGLA
+// -----------------------------
+document.getElementById("selectorRegla").addEventListener("change", function(){
+    localStorage.setItem("regla_id", this.value);
+});
+
+// -----------------------------
+cargarReglas();
+function irDashboard(){
+    window.location.href = "/dashboard"
+}
+function irReglas(){
+    window.location.href = "/reglas_ui"
+}
+function irWeb(){
+    window.location.href = "/web"
+}
+function irWebAI(){
+    window.location.href = "/web_ai"
+}
+function irDesktop(){
+    window.location.href = "/desktop"
+}
+</script>
+
+</body>
+</html>

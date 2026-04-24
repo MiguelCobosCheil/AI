@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #loader {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #eee;
+            border-top: 4px solid #333;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+
+        .bloque {
+            margin-top: 15px;
+            padding: 10px;
+            background: #eee;
+        }
+
+        .card {
+            background: #f5f5f5;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #333;
+        }
+
+        .card img {
+            max-width: 200px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .titulo {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .ruta {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>AI Analyzer</h2>
+
+<button onclick="irEmails()">📩 Emails</button>
+<button onclick="mostrarCarpeta()">📁 Carpeta</button>
+
+<div id="carpetaBox" style="display:none; margin-top:20px;">
+
+    <input id="ruta" placeholder="Ruta carpeta..." style="width:400px;" />
+
+    <!-- OPCIONES -->
+    <div class="bloque">
+        <h4>⚙️ Opciones</h4>
+
+        <label><input type="checkbox" id="subfolders" checked> Incluir subcarpetas</label><br>
+        <label><input type="checkbox" id="peso"> Peso archivos</label><br>
+        <label><input type="checkbox" id="dimensiones"> Dimensiones imágenes</label><br><br>
+
+        <div class="titulo">📂 Tipos de archivo</div>
+        <label><input type="checkbox" class="tipo" value=".pdf" checked> PDF</label>
+        <label><input type="checkbox" class="tipo" value=".docx" checked> DOCX</label>
+        <label><input type="checkbox" class="tipo" value=".xlsx" checked> XLSX</label>
+        <label><input type="checkbox" class="tipo" value=".csv" checked> CSV</label>
+        <label><input type="checkbox" class="tipo" value=".pptx" checked> PPTX</label>
+        <label><input type="checkbox" class="tipo" value=".txt" checked> TXT</label><br>
+
+        <label><input type="checkbox" class="tipo" value=".jpg" checked> JPG</label>
+        <label><input type="checkbox" class="tipo" value=".png" checked> PNG</label>
+        <label><input type="checkbox" class="tipo" value=".jpeg" checked> JPEG</label>
+
+        <br><br>
+
+        <div class="titulo">📛 Nombre archivo contiene:</div>
+        <input id="nombre_archivo" placeholder="Ej: presupuesto..." style="width:300px;">
+
+        <br><br>
+
+        <div class="titulo">📅 Fecha archivo</div>
+        Desde: <input type="date" id="fecha_desde">
+        Hasta: <input type="date" id="fecha_hasta">
+    </div>
+
+    <!-- BUSQUEDA -->
+    <div class="bloque">
+        <h4>🔍 Búsqueda (IA)</h4>
+
+        <label>
+            <input type="checkbox" id="activar_busqueda">
+            Activar búsqueda inteligente
+        </label>
+
+        <br><br>
+
+        <label>Buscar en DOCUMENTOS (contenido):</label><br>
+        <input id="buscar_texto" placeholder="Ej: presupuesto reforma..." style="width:300px;"><br><br>
+
+        <label>Buscar en IMÁGENES (descripción IA):</label><br>
+        <input id="buscar_imagen" placeholder="Ej: cocina, logo..." style="width:300px;"><br><br>
+
+        <label>Búsqueda EXACTA (texto literal):</label><br>
+        <input id="buscar_exacto" placeholder="Ej: '29.500 euros'" style="width:300px;"><br><br>
+
+        <select id="selectorRegla">
+            <option value="">Sin regla</option>
+        </select>
+    </div>
+
+    <button id="btnAnalizar" onclick="analizar()">Analizar</button>
+
+</div>
+
+<p id="estado"></p>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <span> Analizando... puede tardar</span>
+</div>
+
+<div id="resultado"></div>
+
+<script>
+if(typeof formatearPeso === "undefined"){
+    function formatearPeso(bytes){
+        if(bytes < 1024) return bytes + " B"
+        if(bytes < 1024*1024) return (bytes/1024).toFixed(2) + " KB"
+        if(bytes < 1024*1024*1024) return (bytes/(1024*1024)).toFixed(2) + " MB"
+        return (bytes/(1024*1024*1024)).toFixed(2) + " GB"
+    }
+}
+
+function irEmails(){
+    window.location.href = "/emails"
+}
+
+function mostrarCarpeta(){
+    document.getElementById("carpetaBox").style.display = "block"
+}
+
+async function analizar(){
+
+    const ruta = document.getElementById("ruta").value.trim()
+
+    if(!ruta){
+        alert("Introduce una ruta válida")
+        return
+    }
+
+    const activarBusqueda = document.getElementById("activar_busqueda").checked
+
+    const tipos = Array.from(document.querySelectorAll(".tipo:checked"))
+        .map(el => el.value)
+
+    console.log("TIPOS FRONT:", tipos) 
+    const reglaId = document.getElementById("selectorRegla").value;
+
+    const payload = {
+        ruta: ruta,
+        regla_id: reglaId, // 🔥 AÑADIDO
+
+        include_subfolders: document.getElementById("subfolders").checked,
+        peso: document.getElementById("peso").checked,
+        dimensiones: document.getElementById("dimensiones").checked,
+
+        tipos_archivo: [...tipos],
+
+        nombre_archivo: document.getElementById("nombre_archivo").value,
+        fecha_desde: document.getElementById("fecha_desde").value,
+        fecha_hasta: document.getElementById("fecha_hasta").value,
+
+        usar_busqueda_inteligente: activarBusqueda,
+
+        buscar_texto: activarBusqueda ? document.getElementById("buscar_texto").value : "",
+        buscar_imagen: activarBusqueda ? document.getElementById("buscar_imagen").value : "",
+        buscar_exacto: activarBusqueda ? document.getElementById("buscar_exacto").value : ""
+    }
+
+    const btn = document.getElementById("btnAnalizar")
+
+    document.getElementById("estado").innerText = "⏳ Analizando..."
+    document.getElementById("resultado").innerHTML = ""
+    document.getElementById("loader").style.display = "block"
+
+    btn.disabled = true
+    btn.innerText = "Procesando..."
+
+    try {
+        console.log("SUBFOLDERS FRONT:", document.getElementById("subfolders").checked)
+        const res = await fetch("/analizar_carpeta", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        })
+
+        const data = await res.json()
+
+        document.getElementById("estado").innerText = "✅ Terminado"
+
+        renderResultado(data)
+
+    } catch (error) {
+
+        document.getElementById("estado").innerText = "❌ Error"
+        document.getElementById("resultado").innerText = error
+    }
+
+    document.getElementById("loader").style.display = "none"
+    btn.disabled = false
+    btn.innerText = "Analizar"
+}
+
+function renderResultado(data){
+
+    let html = ""
+    const resultados = data.resultados || data.coincidencias || []
+
+    html += `<div class="titulo">🎯 Coincidencias encontradas: ${resultados.length}</div>`
+
+    if(!resultados.length){
+        html += `<p>No se han encontrado resultados</p>`
+    }
+
+    resultados.forEach(item => {
+
+        html += `<div class="card">`
+
+        html += `<div><strong>${item.nombre}</strong></div>`
+
+        // 📄 DOCUMENTO
+        if(item.tipo === "documento" || item.resumen){
+            html += `<div>📄 ${item.resumen || "Sin resumen"}</div>`
+        }
+
+        // 🖼️ IMAGEN
+        if(item.tipo === "imagen" || item.descripcion){
+            html += `<div>🖼️ ${item.descripcion || "Sin descripción"}</div>`
+
+            // ⚠️ SOLO si existe ruta válida
+            if(item.ruta){
+                html += `<img src="file://${item.ruta}" />`
+            }
+        }
+
+        // 📦 PESO
+        if(item.peso !== undefined){
+            html += `<div>📦 Peso: ${formatearPeso(item.peso)}</div>`
+        }
+
+        // 📐 DIMENSIONES
+        if(item.dimensiones){
+            html += `<div>📐 Dimensiones: ${item.dimensiones}</div>`
+        }
+        // 🔥 EVALUACIÓN IA
+        if(item.evaluacion){
+            const ok = item.evaluacion.ok
+
+            html += `<div style="margin-top:8px; padding:6px; border-radius:4px;
+                background:${ok ? '#d4edda' : '#f8d7da'};
+                color:${ok ? '#155724' : '#721c24'};">
+                ${ok ? '✅ OK' : '❌ ERROR'} - ${item.evaluacion.motivo}
+            </div>`
+        }
+        html += `<div class="ruta">${item.ruta}</div>`
+        html += `</div>`
+    })
+
+    document.getElementById("resultado").innerHTML = html
+}
+async function cargarReglas() {
+    const res = await fetch("/reglas");
+    const reglas = await res.json();
+
+    const select = document.getElementById("selectorRegla");
+
+    reglas.forEach(r => {
+        const option = document.createElement("option");
+        option.value = r.id;
+        option.textContent = r.nombre;
+        select.appendChild(option);
+    });
+
+    const guardada = localStorage.getItem("regla_id");
+    if (guardada) {
+        select.value = guardada;
+    }
+}
+
+cargarReglas();
+document.getElementById("selectorRegla").addEventListener("change", function(){
+    localStorage.setItem("regla_id", this.value);
+});
+</script>
+
+</body>
+</html>

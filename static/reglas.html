@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entrenar Regla IA</title>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .step { display: none; margin-top: 20px; }
+        .active { display: block; }
+        button { padding: 10px; margin-top: 10px; cursor: pointer; }
+        textarea, input { width: 400px; margin-bottom: 10px; }
+        .ok { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+
+<body>
+
+<h2>🧠 Entrenamiento de Reglas IA</h2>
+
+<button onclick="volver()">⬅ Volver</button>
+<h3>📚 Reglas existentes</h3>
+<div id="lista_reglas"></div>
+<!-- ---------------- STEP 1 ---------------- -->
+<div id="step1" class="step active">
+
+<h3>1️⃣ Crear regla</h3>
+
+<input id="nombre" placeholder="Nombre"><br>
+<textarea id="prompt" rows="5" placeholder="Describe la regla..."></textarea><br>
+
+<label>📄 Documentos</label><br>
+<input type="file" id="docs" multiple><br><br>
+
+<label>🖼️ Imágenes</label><br>
+<input type="file" id="imgs" multiple><br><br>
+
+<button onclick="crear()">Crear y continuar →</button>
+
+<p id="estado1"></p>
+
+</div>
+
+<!-- ---------------- STEP 2 ---------------- -->
+<div id="step2" class="step">
+
+<h3>2️⃣ Probar regla</h3>
+
+<textarea id="texto_test" placeholder="Texto a evaluar..."></textarea><br>
+
+<label>📄 Documento</label><br>
+<input type="file" id="doc_test"><br><br>
+
+<button onclick="test()">Probar</button>
+
+<pre id="resultado_test"></pre>
+
+<button onclick="irStep3()">Continuar →</button>
+<p id="loading_test" style="display:none;">⏳ Probando regla...</p>
+</div>
+
+<!-- ---------------- STEP 3 ---------------- -->
+<div id="step3" class="step">
+
+<h3>3️⃣ Feedback (entrenamiento)</h3>
+
+<label>¿Es correcto?</label><br>
+<button onclick="feedback(true)">✔ Correcto</button>
+<button onclick="feedback(false)">❌ Incorrecto</button>
+
+<br><br>
+
+<textarea id="comentario" placeholder="¿Qué debería haber hecho mejor?"></textarea>
+
+<br>
+
+<button onclick="reentrenar()">🔁 Mejorar regla</button>
+
+<p id="estado3"></p>
+
+</div>
+
+<script>
+
+let regla_id = null
+let ultimo_input = ""
+let ultimo_output = ""
+
+function volver(){
+    window.location.href = "/"
+}
+
+function cambiarStep(n){
+    document.querySelectorAll(".step").forEach(s => s.classList.remove("active"))
+    document.getElementById("step"+n).classList.add("active")
+}
+
+//////////////////////////////
+// STEP 1
+//////////////////////////////
+
+async function crear(){
+
+    const nombre = document.getElementById("nombre").value
+    const prompt = document.getElementById("prompt").value
+
+    const formData = new FormData()
+    formData.append("nombre", nombre)
+    formData.append("prompt_base", prompt)
+
+    const docs = document.getElementById("docs").files
+    for(let d of docs){
+        formData.append("documentos", d)
+    }
+
+    const imgs = document.getElementById("imgs").files
+    for(let i of imgs){
+        formData.append("imagenes", i)
+    }
+
+    document.getElementById("estado1").innerText = "⏳ creando..."
+
+    const res = await fetch("/reglas/crear", {
+        method: "POST",
+        body: formData
+    })
+
+    const data = await res.json()
+
+    regla_id = data.regla.id
+
+    document.getElementById("estado1").innerText = "✅ creada"
+
+    cambiarStep(2)
+}
+
+//////////////////////////////
+// STEP 2
+//////////////////////////////
+
+async function test(){
+
+    const texto = document.getElementById("texto_test").value
+    const file = document.getElementById("doc_test").files[0]
+
+    const formData = new FormData()
+    formData.append("regla_id", regla_id)
+    formData.append("texto", texto)
+
+    if(file){
+        formData.append("documento", file)
+    }
+
+    document.getElementById("loading_test").style.display = "block"
+
+    const res = await fetch("/reglas/test", {
+        method: "POST",
+        body: formData
+    })
+
+    const data = await res.json()
+
+    document.getElementById("loading_test").style.display = "none"
+
+    ultimo_input = data.input
+    ultimo_output = JSON.stringify(data.resultado)
+
+    document.getElementById("resultado_test").innerText =
+        JSON.stringify(data.resultado, null, 2)
+}
+
+function irStep3(){
+    cambiarStep(3)
+}
+
+//////////////////////////////
+// STEP 3
+//////////////////////////////
+
+async function feedback(correcto){
+
+    await fetch("/reglas/feedback", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            regla_id: regla_id,
+            correcto: correcto,
+            input: ultimo_input,
+            output: ultimo_output,
+            comentario: document.getElementById("comentario").value
+        })
+    })
+
+    document.getElementById("estado3").innerText = "✅ feedback guardado"
+}
+
+function reentrenar(){
+    cambiarStep(2)
+}
+async function cargarListaReglas(){
+
+    const res = await fetch("/reglas")
+    const reglas = await res.json()
+
+    let html = ""
+
+    reglas.forEach(r => {
+
+        html += `
+        <div style="margin-bottom:10px;">
+            <strong>${r.nombre}</strong>
+            <button onclick="eliminar('${r.id}')">🗑️</button>
+        </div>
+        `
+    })
+
+    document.getElementById("lista_reglas").innerHTML = html
+}
+
+async function eliminar(id){
+
+    if(!confirm("¿Eliminar regla?")) return
+
+    await fetch(`/reglas/${id}`, { method: "DELETE" })
+
+    cargarListaReglas()
+}
+
+cargarListaReglas()
+</script>
+
+</body>
+</html>

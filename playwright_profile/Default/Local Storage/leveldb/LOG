@@ -1,0 +1,6 @@
+2026/04/21-15:19:15.658 a8740 Reusing MANIFEST /Users/miguelcobos/Desktop/IA_Cheil/playwright_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/04/21-15:19:15.661 a8740 Recovering log #3
+2026/04/21-15:19:15.662 a8740 Reusing old log /Users/miguelcobos/Desktop/IA_Cheil/playwright_profile/Default/Local Storage/leveldb/000003.log 
+2026/04/21-15:19:44.647 a8740 Level-0 table #5: started
+2026/04/21-15:19:44.654 a8740 Level-0 table #5: 50929 bytes OK
+2026/04/21-15:19:44.656 a8740 Delete type=0 #3

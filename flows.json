@@ -1,0 +1,55 @@
+{
+  "a1": {
+    "url": "https://www.google.com/",
+    "steps": [
+      {
+        "type": "wait",
+        "time": 3000
+      },
+      {
+        "type": "click",
+        "selector": "#W0wltc"
+      },
+      {
+        "type": "wait",
+        "time": 3000
+      },
+      {
+        "type": "form",
+        "form": {
+          "selector": ".gLFyf",
+          "value": "Samsung s26 ultra",
+          "inputType": "input"
+        }
+      },
+      {
+        "type": "wait",
+        "time": 2000
+      },
+      {
+        "type": "click",
+        "selector": ".lnXdpd"
+      },
+      {
+        "type": "wait",
+        "time": 2000
+      },
+      {
+        "type": "click",
+        "selector": ".gNO89b"
+      },
+      {
+        "type": "wait",
+        "time": 2000
+      },
+      {
+        "type": "extract_ai",
+        "prompt": "resumen de listado de las webs que aparecen en los resultados y dime en que posicion sale el primer producto de la tienda de samsung.com"
+      },
+      {
+        "type": "wait",
+        "time": 2000
+      }
+    ]
+  }
+}
