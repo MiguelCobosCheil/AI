@@ -3,25 +3,25 @@
     "nombre": "a1",
     "steps": [
       {
-        "time": 2.6556918621063232,
+        "time": 3.7790310382843018,
         "type": "click",
         "data": {
-          "x": 969.30078125,
-          "y": 931.96484375,
+          "x": 127.28125,
+          "y": 944.0546875,
           "button": "left",
-          "image": "desktop_assets/step_1776958700.png",
+          "image": "desktop_assets/step_1777275066.png",
           "prompt": ""
         }
       },
       {
-        "time": 4.918905019760132,
+        "time": 7.394744157791138,
         "type": "click",
         "data": {
-          "x": 802.78515625,
-          "y": 838.79296875,
+          "x": 479.13671875,
+          "y": 216.91796875,
           "button": "left",
-          "image": "desktop_assets/step_1776958702.png",
-          "prompt": ""
+          "image": "desktop_assets/step_1777275069.png",
+          "prompt": "al hacer click escribir la palabra powerPoint"
         }
       }
     ]
